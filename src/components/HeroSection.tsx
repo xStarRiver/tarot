@@ -30,12 +30,21 @@ function CardCarousel() {
         {visibleCards.map((question, idx) => (
           <div
             key={idx}
-            className="relative"
+            className="relative cursor-pointer"
             style={{
               transform: `translateY(${yOffsets[idx]}px) rotate(${baseAngles[idx]}deg)`,
               transformOrigin: "50% 100%",
               marginLeft: idx === 0 ? 0 : "-25px",
               zIndex: 5 - Math.abs(idx - 2),
+              transition: "transform 0.3s ease, z-index 0s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.transform = `translateY(${yOffsets[idx] - 60}px) rotate(0deg) scale(1.05)`;
+              (e.currentTarget as HTMLElement).style.zIndex = "50";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.transform = `translateY(${yOffsets[idx]}px) rotate(${baseAngles[idx]}deg)`;
+              (e.currentTarget as HTMLElement).style.zIndex = String(5 - Math.abs(idx - 2));
             }}
           >
             {/* Question text */}
