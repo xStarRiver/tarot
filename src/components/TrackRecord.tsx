@@ -55,23 +55,30 @@ const cases = [
   },
 ];
 
+const summaryStats = [
+  { value: "500+", label: "服務客戶" },
+  { value: "98%", label: "滿意度" },
+  { value: "10年+", label: "從業經驗" },
+  { value: "精準至時", label: "預測精度" },
+];
+
 export default function TrackRecord() {
   return (
-    <section className="relative overflow-hidden px-6 py-24 md:py-32">
-      {/* Background glows */}
+    <section id="cases" className="relative overflow-hidden py-24 md:py-32">
+      {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <div
-          className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full blur-[100px]"
-          style={{ background: "rgba(42,157,92,0.05)" }}
+          className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full blur-[120px]"
+          style={{ background: "rgba(42,157,92,0.04)" }}
         />
         <div
-          className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full blur-[100px]"
-          style={{ background: "rgba(201,168,76,0.05)" }}
+          className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full blur-[120px]"
+          style={{ background: "rgba(201,168,76,0.04)" }}
         />
       </div>
 
-      <div className="relative mx-auto max-w-6xl">
-        {/* Section header */}
+      <div className="relative mx-auto w-full max-w-6xl px-6 sm:px-8 md:px-12 lg:px-16">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,19 +86,20 @@ export default function TrackRecord() {
           transition={{ duration: 0.8 }}
           className="mb-16 text-center"
         >
+          <div className="badge badge-emerald mx-auto mb-4">實戰案例</div>
           <h2
             className="text-3xl font-bold text-gradient-gold sm:text-4xl md:text-5xl"
             style={{ fontFamily: "'Noto Serif TC', serif" }}
           >
             奇門戰績
           </h2>
-          <p className="mt-4 text-lg text-[#A1A1AA]" style={{ fontFamily: "'Noto Serif TC', serif" }}>
+          <p className="mt-4 text-base text-[#6B6B76]">
             精準至日、至時辰的預測實績
           </p>
         </motion.div>
 
-        {/* Case cards grid */}
-        <div className="grid gap-6 sm:grid-cols-2">
+        {/* Case cards */}
+        <div className="grid gap-5 sm:grid-cols-2">
           {cases.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -100,20 +108,14 @@ export default function TrackRecord() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.15 }}
-                whileHover={{ y: -4 }}
-                className="group overflow-hidden rounded-2xl p-6 transition-all duration-300"
-                style={{
-                  background: "rgba(22,22,31,0.8)",
-                  backdropFilter: "blur(20px)",
-                  border: "1px solid #27272A",
-                }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="card-glass flex flex-col p-6"
               >
-                {/* Category tag */}
-                <div className="mb-4 flex items-center gap-2">
+                {/* Category */}
+                <div className="mb-4 flex items-center gap-2.5">
                   <div
                     className="flex h-8 w-8 items-center justify-center rounded-lg"
-                    style={{ background: "rgba(201,168,76,0.1)" }}
+                    style={{ background: "rgba(201,168,76,0.08)" }}
                   >
                     <Icon className="h-4 w-4" style={{ color: "#C9A84C" }} />
                   </div>
@@ -129,32 +131,32 @@ export default function TrackRecord() {
                 >
                   {item.title}
                 </h3>
-                <p className="mb-4 text-sm leading-relaxed text-[#A1A1AA]">
+                <p className="mb-5 text-sm leading-relaxed text-[#A1A1AA]">
                   {item.description}
                 </p>
 
                 {/* Stats */}
-                <div className="mb-4 flex flex-wrap gap-3">
+                <div className="mb-5 flex flex-wrap gap-2">
                   {item.stats.map((stat) => (
                     <div
                       key={stat.label}
-                      className="rounded-lg px-3 py-2"
-                      style={{ background: "rgba(10,10,15,0.6)" }}
+                      className="rounded-xl px-3.5 py-2"
+                      style={{ background: "rgba(8,8,12,0.6)", border: "1px solid #1F1F2E" }}
                     >
-                      <p className="text-xs text-[#71717A]">{stat.label}</p>
-                      <p className="text-lg font-bold text-gradient-gold">
+                      <p className="text-[10px] uppercase tracking-wider text-[#6B6B76]">{stat.label}</p>
+                      <p className="text-base font-bold text-gradient-gold">
                         {stat.value}
                       </p>
                     </div>
                   ))}
                 </div>
 
-                {/* Highlight quote */}
+                {/* Highlight */}
                 <div
-                  className="rounded-lg px-4 py-2"
+                  className="mt-auto rounded-xl px-4 py-2.5"
                   style={{
-                    borderLeft: "2px solid rgba(201,168,76,0.5)",
-                    background: "rgba(201,168,76,0.05)",
+                    borderLeft: "3px solid rgba(201,168,76,0.4)",
+                    background: "rgba(201,168,76,0.04)",
                   }}
                 >
                   <p className="text-xs italic" style={{ color: "#E8D48B" }}>
@@ -166,29 +168,24 @@ export default function TrackRecord() {
           })}
         </div>
 
-        {/* Bottom stats summary */}
+        {/* Summary stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-12 grid grid-cols-2 gap-4 rounded-2xl p-6 sm:grid-cols-4"
+          transition={{ delay: 0.3 }}
+          className="mt-14 grid grid-cols-2 gap-4 rounded-2xl p-6 sm:grid-cols-4 md:p-8"
           style={{
-            border: "1px solid #27272A",
-            background: "rgba(17,17,24,0.5)",
+            border: "1px solid #1F1F2E",
+            background: "rgba(14,14,20,0.6)",
           }}
         >
-          {[
-            { value: "500+", label: "服務客戶" },
-            { value: "98%", label: "滿意度" },
-            { value: "10年+", label: "從業經驗" },
-            { value: "精準至時", label: "預測精度" },
-          ].map((stat) => (
+          {summaryStats.map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="text-2xl font-bold text-gradient-gold sm:text-3xl">
                 {stat.value}
               </p>
-              <p className="mt-1 text-xs text-[#71717A]">{stat.label}</p>
+              <p className="mt-1.5 text-xs text-[#6B6B76]">{stat.label}</p>
             </div>
           ))}
         </motion.div>

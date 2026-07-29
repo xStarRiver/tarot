@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, Star, Sparkles } from "lucide-react";
+import { Check, Star, Sparkles, ArrowRight } from "lucide-react";
 
 const tiers = [
   {
     name: "網上評測",
     price: "$1,388",
-    description: "遠程深度諮詢",
+    unit: "每次",
+    description: "遠程深度諮詢，隨時隨地",
     highlight: false,
     features: [
       "1 小時無限提問",
@@ -21,6 +22,7 @@ const tiers = [
   {
     name: "面對面深度諮詢 + 佈局",
     price: "$2,388",
+    unit: "每次",
     description: "最受歡迎 · 全方位服務",
     highlight: true,
     badge: "推薦",
@@ -38,16 +40,16 @@ const tiers = [
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="relative px-6 py-24 md:py-32">
-      {/* Background decoration */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    <section id="pricing" className="relative overflow-hidden py-24 md:py-32">
+      {/* Background glow */}
+      <div className="pointer-events-none absolute inset-0">
         <div
-          className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
-          style={{ background: "rgba(201,168,76,0.05)" }}
+          className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[150px]"
+          style={{ background: "rgba(201,168,76,0.04)" }}
         />
       </div>
 
-      <div className="relative mx-auto max-w-5xl">
+      <div className="relative mx-auto w-full max-w-6xl px-6 sm:px-8 md:px-12 lg:px-16">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -56,127 +58,101 @@ export default function PricingSection() {
           transition={{ duration: 0.8 }}
           className="mb-16 text-center"
         >
+          <div className="badge badge-gold mx-auto mb-4">服務方案</div>
           <h2
             className="text-3xl font-bold sm:text-4xl md:text-5xl text-gradient-gold"
             style={{ fontFamily: "'Noto Serif TC', serif" }}
           >
-            服務方案
+            選擇適合您的方案
           </h2>
-          <p className="mt-4 text-lg text-[#A1A1AA]" style={{ fontFamily: "'Noto Serif TC', serif" }}>
-            選擇最適合您的諮詢方式
+          <p className="mt-4 text-base text-[#6B6B76]">
+            所有服務皆為一對一私密諮詢，內容絕對保密
           </p>
         </motion.div>
 
         {/* Pricing cards */}
-        <div className="grid gap-8 md:grid-cols-2 items-start">
+        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2 md:gap-8 items-stretch">
           {tiers.map((tier, idx) => (
             <motion.div
               key={tier.name}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.2 }}
-              whileHover={{ y: -8 }}
-              className="relative flex flex-col rounded-2xl p-8 transition-all duration-300"
-              style={
-                tier.highlight
-                  ? {
-                      background: "rgba(22,22,31,0.9)",
-                      backdropFilter: "blur(20px)",
-                      border: "1px solid rgba(201,168,76,0.4)",
-                      borderRadius: "16px",
-                      boxShadow:
-                        "0 0 40px rgba(201,168,76,0.12), inset 0 1px 0 rgba(201,168,76,0.15)",
-                      transform: "scale(1.03)",
-                    }
-                  : {
-                      background: "rgba(22,22,31,0.8)",
-                      backdropFilter: "blur(20px)",
-                      border: "1px solid #27272A",
-                      borderRadius: "16px",
-                    }
-              }
+              transition={{ duration: 0.6, delay: idx * 0.15 }}
+              className={`relative flex flex-col p-7 md:p-8 ${tier.highlight ? "card-glass-gold" : "card-glass"}`}
             >
-              {/* Highlight badge */}
+              {/* Badge */}
               {tier.badge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <div className="absolute -top-3 left-6">
                   <div
-                    className="flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold text-[#0A0A0F]"
+                    className="flex items-center gap-1 rounded-lg px-3 py-1 text-xs font-bold"
                     style={{
                       background: "linear-gradient(135deg, #8B7332, #C9A84C, #E8D48B)",
+                      color: "#08080C",
                     }}
                   >
-                    <Sparkles className="h-3.5 w-3.5" />
+                    <Sparkles className="h-3 w-3" />
                     {tier.badge}
                   </div>
                 </div>
               )}
 
-              {/* Tier header */}
+              {/* Header */}
               <div className="mb-6">
-                <h3 className="text-xl font-semibold text-[#F5F5F7]" style={{ fontFamily: "'Noto Serif TC', serif" }}>
+                <h3
+                  className="text-lg font-semibold text-[#F5F5F7]"
+                  style={{ fontFamily: "'Noto Serif TC', serif" }}
+                >
                   {tier.name}
                 </h3>
-                <p className="mt-1 text-sm text-[#71717A]">{tier.description}</p>
+                <p className="mt-1 text-sm text-[#6B6B76]">{tier.description}</p>
               </div>
 
               {/* Price */}
-              <div className="mb-8">
+              <div className="mb-8 flex items-baseline gap-1">
                 <span className={`text-4xl font-bold ${tier.highlight ? "text-gradient-gold" : "text-[#F5F5F7]"}`}>
                   {tier.price}
                 </span>
-                <span className="ml-2 text-sm text-[#71717A]">/ 每次</span>
+                <span className="text-sm text-[#6B6B76]">/ {tier.unit}</span>
               </div>
 
+              {/* Divider */}
+              <div className="divider-gold mb-6" />
+
               {/* Features */}
-              <ul className="mb-8 flex-1 space-y-3">
+              <ul className="mb-8 flex-1 space-y-3.5">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <Check
-                      className="mt-0.5 h-4 w-4 flex-shrink-0"
-                      style={{ color: tier.highlight ? "#C9A84C" : "#2A9D5C" }}
-                    />
+                    <div
+                      className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-md"
+                      style={{
+                        background: tier.highlight ? "rgba(201,168,76,0.1)" : "rgba(42,157,92,0.1)",
+                      }}
+                    >
+                      <Check
+                        className="h-3 w-3"
+                        style={{ color: tier.highlight ? "#C9A84C" : "#2A9D5C" }}
+                      />
+                    </div>
                     <span className="text-sm text-[#A1A1AA]">{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              {/* CTA Button */}
+              {/* CTA */}
               <a
                 href="https://wa.me/85254987176"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-300"
-                style={
-                  tier.highlight
-                    ? {
-                        background: "linear-gradient(135deg, #8B7332, #C9A84C, #E8D48B)",
-                        color: "#0A0A0F",
-                      }
-                    : {
-                        border: "1px solid #27272A",
-                        background: "rgba(22,22,31,0.8)",
-                        color: "#F5F5F7",
-                      }
-                }
+                className={tier.highlight ? "btn-primary w-full" : "btn-secondary w-full"}
               >
                 {tier.highlight && <Star className="h-4 w-4" />}
                 {tier.cta}
+                <ArrowRight className="h-4 w-4" />
               </a>
             </motion.div>
           ))}
         </div>
-
-        {/* Trust note */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="mt-12 text-center text-sm text-[#71717A]"
-        >
-          * 所有服務皆為一對一私密諮詢，內容絕對保密
-        </motion.p>
       </div>
     </section>
   );
