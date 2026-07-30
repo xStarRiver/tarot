@@ -154,7 +154,7 @@ export default function TestimonialsSection() {
           {/* Scrollable container */}
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-hidden py-4 px-4"
+            className="flex gap-3 sm:gap-4 overflow-x-hidden py-4 px-4"
             style={{ scrollBehavior: "auto" }}
           >
             {duplicatedImages.map((image, idx) => (
@@ -162,8 +162,8 @@ export default function TestimonialsSection() {
                 key={idx}
                 className="group relative flex-shrink-0 cursor-pointer overflow-hidden rounded-xl transition-transform duration-300 hover:scale-[1.03]"
                 style={{
-                  width: "280px",
-                  height: "380px",
+                  width: "clamp(200px, 40vw, 280px)",
+                  height: "clamp(270px, 55vw, 380px)",
                   border: "1px solid rgba(255,255,255,0.06)",
                   background: "rgba(19,19,32,0.5)",
                 }}

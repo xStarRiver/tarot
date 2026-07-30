@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BookOpen, ShoppingBag, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 
 const courses = [
   {
@@ -41,165 +42,246 @@ const products = [
 
 export default function CoursesProducts() {
   return (
-    <section className="relative overflow-hidden py-24 md:py-32">
-      {/* Background */}
-      <div className="pointer-events-none absolute inset-0">
-        <div
-          className="absolute left-1/4 top-0 h-[400px] w-[400px] rounded-full blur-[120px]"
-          style={{ background: "rgba(201,168,76,0.03)" }}
-        />
-      </div>
+    <section className="relative py-20 sm:py-28">
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          background: "radial-gradient(ellipse at 70% 80%, rgba(88,28,135,0.06), transparent 60%)",
+        }}
+      />
 
-      <div className="relative mx-auto w-full max-w-6xl px-6 sm:px-8 md:px-12 lg:px-16">
+      <div className="relative mx-auto w-full max-w-5xl px-5 sm:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-16 text-center"
+          transition={{ duration: 0.6 }}
+          className="mb-14"
         >
-          <div className="badge badge-gold mx-auto mb-4">進階服務</div>
-          <h2
-            className="text-3xl font-bold text-gradient-gold sm:text-4xl md:text-5xl"
-            style={{ fontFamily: "'Noto Serif TC', serif" }}
+          <p
+            className="text-xs font-medium uppercase tracking-[0.2em] mb-3"
+            style={{ color: "#C9A84C" }}
           >
-            增值課程與法物
+            進階服務
+          </p>
+          <h2
+            className="text-2xl font-bold sm:text-3xl md:text-4xl"
+            style={{ fontFamily: "'Noto Serif TC', serif", color: "#F5F5F7" }}
+          >
+            課程與法物
           </h2>
-          <p className="mt-4 text-base text-[#6B6B76]">
-            自我提升，持續受益
+          <p className="mt-3 text-sm text-[#8B8B96] max-w-md">
+            自我提升，持續受益。所有法物經奇門擇時開光加持。
           </p>
         </motion.div>
 
-        {/* Two columns */}
-        <div className="grid gap-10 lg:grid-cols-5 lg:gap-12">
-          {/* Courses */}
-          <div className="lg:col-span-3">
-            <div className="mb-5 flex items-center gap-2.5">
-              <div
-                className="flex h-8 w-8 items-center justify-center rounded-lg"
-                style={{ background: "rgba(201,168,76,0.08)" }}
+        {/* Courses */}
+        <div className="mb-12">
+          <h3
+            className="text-sm font-medium tracking-wider uppercase mb-5"
+            style={{ color: "#8B8B96" }}
+          >
+            課程
+          </h3>
+          <div className="space-y-3">
+            {courses.map((course, idx) => (
+              <motion.div
+                key={course.title}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="group flex items-center justify-between rounded-xl p-4 sm:p-5 transition-all duration-300"
+                style={{
+                  background: "rgba(14,14,20,0.5)",
+                  border: "1px solid rgba(255,255,255,0.04)",
+                }}
               >
-                <BookOpen className="h-4 w-4" style={{ color: "#C9A84C" }} />
-              </div>
-              <h3 className="text-lg font-semibold text-[#F5F5F7]" style={{ fontFamily: "'Noto Serif TC', serif" }}>
-                課程一覽
-              </h3>
-            </div>
-            <div className="space-y-3">
-              {courses.map((course, idx) => (
-                <motion.div
-                  key={course.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="card-glass flex items-center justify-between p-5"
-                >
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2.5">
-                      <h4 className="text-base font-semibold text-[#F5F5F7]" style={{ fontFamily: "'Noto Serif TC', serif" }}>
-                        {course.title}
-                      </h4>
-                      <span className="shrink-0 rounded-md px-2 py-0.5 text-[10px] font-medium text-[#6B6B76]" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid #1F1F2E" }}>
-                        {course.duration}
-                      </span>
-                    </div>
-                    <p className="mt-1.5 text-sm text-[#6B6B76]">
-                      {course.description}
-                    </p>
-                  </div>
-                  <div className="ml-4 text-right shrink-0">
-                    <span className="text-xl font-bold text-gradient-gold">
-                      {course.price}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h4
+                      className="text-sm font-semibold sm:text-base"
+                      style={{ fontFamily: "'Noto Serif TC', serif", color: "#F5F5F7" }}
+                    >
+                      {course.title}
+                    </h4>
+                    <span
+                      className="text-[10px] px-2 py-0.5 rounded-md"
+                      style={{ background: "rgba(201,168,76,0.08)", color: "#B8A472" }}
+                    >
+                      {course.duration}
                     </span>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="mt-5"
-            >
-              <a
-                href="https://wa.me/85254987176"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-              >
-                查詢課程詳情
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </motion.div>
-          </div>
-
-          {/* Products */}
-          <div className="lg:col-span-2">
-            <div className="mb-5 flex items-center gap-2.5">
-              <div
-                className="flex h-8 w-8 items-center justify-center rounded-lg"
-                style={{ background: "rgba(42,157,92,0.08)" }}
-              >
-                <ShoppingBag className="h-4 w-4" style={{ color: "#2A9D5C" }} />
-              </div>
-              <h3 className="text-lg font-semibold text-[#F5F5F7]" style={{ fontFamily: "'Noto Serif TC', serif" }}>
-                精選法物
-              </h3>
-            </div>
-            <div className="space-y-3">
-              {products.map((product, idx) => (
-                <motion.div
-                  key={product.title}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.12 }}
-                  className="card-glass overflow-hidden p-5"
-                >
-                  {/* Tag & Price */}
-                  <div className="mb-3 flex items-center justify-between">
-                    <span className="badge badge-emerald">
-                      {product.tag}
-                    </span>
-                    <span className="text-xl font-bold text-gradient-gold">
-                      {product.price}
-                    </span>
-                  </div>
-                  <h4 className="text-base font-semibold text-[#F5F5F7]" style={{ fontFamily: "'Noto Serif TC', serif" }}>
-                    {product.title}
-                  </h4>
-                  <p className="mt-2 text-sm leading-relaxed text-[#6B6B76]">
-                    {product.description}
+                  <p className="mt-1 text-xs sm:text-sm text-[#6B6B76]">
+                    {course.description}
                   </p>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+                <div className="ml-4 shrink-0 text-right">
+                  <span
+                    className="text-base font-bold sm:text-lg"
+                    style={{
+                      background: "linear-gradient(135deg, #F6D365, #C9A84C)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    {course.price}
+                  </span>
+                </div>
 
-            {/* CTA */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="mt-5"
-            >
-              <a
-                href="https://wa.me/85254987176"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-ghost"
-              >
-                查詢法物詳情
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </motion.div>
+                {/* Hover border */}
+                <div
+                  className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none"
+                  style={{ border: "1px solid rgba(201,168,76,0.12)" }}
+                />
+              </motion.div>
+            ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-4"
+          >
+            <a
+              href="https://wa.me/85254987176"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-medium transition-colors hover:opacity-80"
+              style={{ color: "#C9A84C" }}
+            >
+              查詢課程詳情
+              <ArrowRight className="h-3 w-3" />
+            </a>
+          </motion.div>
         </div>
+
+        {/* Divider */}
+        <div
+          className="h-px w-full mb-12"
+          style={{ background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.15), transparent)" }}
+        />
+
+        {/* Products */}
+        <div>
+          <h3
+            className="text-sm font-medium tracking-wider uppercase mb-5"
+            style={{ color: "#8B8B96" }}
+          >
+            精選法物
+          </h3>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {products.map((product, idx) => (
+              <motion.div
+                key={product.title}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="group relative rounded-xl p-5 transition-all duration-300"
+                style={{
+                  background: "rgba(14,14,20,0.5)",
+                  border: "1px solid rgba(255,255,255,0.04)",
+                }}
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <span
+                    className="text-[10px] font-medium px-2.5 py-1 rounded-md"
+                    style={{ background: "rgba(42,157,92,0.08)", color: "#4ADE80" }}
+                  >
+                    {product.tag}
+                  </span>
+                  <span
+                    className="text-lg font-bold"
+                    style={{
+                      background: "linear-gradient(135deg, #F6D365, #C9A84C)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    {product.price}
+                  </span>
+                </div>
+                <h4
+                  className="text-base font-semibold mb-2"
+                  style={{ fontFamily: "'Noto Serif TC', serif", color: "#F5F5F7" }}
+                >
+                  {product.title}
+                </h4>
+                <p className="text-xs sm:text-sm leading-relaxed text-[#8B8B96]">
+                  {product.description}
+                </p>
+
+                {/* Hover border */}
+                <div
+                  className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none"
+                  style={{ border: "1px solid rgba(201,168,76,0.12)" }}
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-4"
+          >
+            <a
+              href="https://wa.me/85254987176"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-medium transition-colors hover:opacity-80"
+              style={{ color: "#C9A84C" }}
+            >
+              查詢法物詳情
+              <ArrowRight className="h-3 w-3" />
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-14 text-center"
+        >
+          <div
+            className="rounded-2xl p-8 sm:p-10"
+            style={{
+              background: "linear-gradient(135deg, rgba(201,168,76,0.04), rgba(14,14,20,0.8))",
+              border: "1px solid rgba(201,168,76,0.1)",
+            }}
+          >
+            <p
+              className="text-base sm:text-lg font-medium mb-2"
+              style={{ fontFamily: "'Noto Serif TC', serif", color: "#F5F5F7" }}
+            >
+              想了解更多？
+            </p>
+            <p className="text-sm text-[#8B8B96] mb-5">
+              歡迎 WhatsApp 查詢，為你安排最合適的服務
+            </p>
+            <a
+              href="https://wa.me/85254987176"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-medium transition-all duration-300 hover:scale-105"
+              style={{
+                background: "linear-gradient(135deg, #C9A84C, #E8C84C, #C9A84C)",
+                color: "#1A1A2E",
+                boxShadow: "0 4px 20px rgba(201,168,76,0.2)",
+              }}
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              立即聯繫
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

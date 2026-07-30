@@ -21,8 +21,18 @@ const allCardQuestions = [
 
 function CardCarousel() {
   const visibleCards = allCardQuestions.slice(0, 5);
-  const baseAngles = [-12, -6, 0, 6, 12];
-  const yOffsets = [110, 50, 0, 50, 110];
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  const angles = isMobile ? [-10, -5, 0, 5, 10] : [-12, -6, 0, 6, 12];
+  const yOffsets = isMobile ? [60, 28, 0, 28, 60] : [110, 50, 0, 50, 110];
+  const margin = isMobile ? "-15px" : "-25px";
 
   return (
     <div className="absolute bottom-0 left-0 right-0 z-[3] translate-y-[15%]">
@@ -30,26 +40,28 @@ function CardCarousel() {
         {visibleCards.map((question, idx) => (
           <div
             key={idx}
-            className="relative cursor-pointer"
+            className={`relative cursor-pointer ${
+              idx === 0 || idx === 4 ? "hidden sm:block" : ""
+            }`}
             style={{
-              transform: `translateY(${yOffsets[idx]}px) rotate(${baseAngles[idx]}deg)`,
+              transform: `translateY(${yOffsets[idx]}px) rotate(${angles[idx]}deg)`,
               transformOrigin: "50% 100%",
-              marginLeft: idx === 0 ? 0 : "-25px",
+              marginLeft: idx === 0 ? "0" : margin,
               zIndex: 5 - Math.abs(idx - 2),
-              transition: "transform 0.3s ease, z-index 0s",
+              transition: "transform 0.3s ease",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = `translateY(${yOffsets[idx] - 60}px) rotate(0deg) scale(1.05)`;
+              (e.currentTarget as HTMLElement).style.transform = `translateY(${yOffsets[idx] - 40}px) rotate(0deg) scale(1.05)`;
               (e.currentTarget as HTMLElement).style.zIndex = "50";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = `translateY(${yOffsets[idx]}px) rotate(${baseAngles[idx]}deg)`;
+              (e.currentTarget as HTMLElement).style.transform = `translateY(${yOffsets[idx]}px) rotate(${angles[idx]}deg)`;
               (e.currentTarget as HTMLElement).style.zIndex = String(5 - Math.abs(idx - 2));
             }}
           >
             {/* Question text */}
             <div
-              className="absolute -top-12 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg px-3 py-1.5 text-center z-50"
+              className="absolute -top-10 sm:-top-12 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg px-2 py-1 sm:px-3 sm:py-1.5 text-center z-50"
               style={{
                 background: "rgba(10,0,26,0.88)",
                 border: "1px solid rgba(168,85,247,0.35)",
@@ -58,7 +70,7 @@ function CardCarousel() {
               }}
             >
               <p
-                className="text-[10px] font-medium text-purple-200 sm:text-xs"
+                className="text-[8px] font-medium text-purple-200 sm:text-xs"
                 style={{ fontFamily: "'Noto Serif TC', serif" }}
               >
                 {question}
@@ -66,9 +78,9 @@ function CardCarousel() {
             </div>
 
             {/* Card */}
-            <div className="relative h-[340px] w-[230px] overflow-hidden rounded-2xl shadow-2xl sm:h-[450px] sm:w-[300px] lg:h-[550px] lg:w-[370px]">
+            <div className="relative h-[220px] w-[150px] overflow-hidden rounded-xl shadow-2xl sm:h-[450px] sm:w-[300px] lg:h-[550px] lg:w-[370px] sm:rounded-2xl">
               <div
-                className="absolute inset-0 rounded-2xl z-10"
+                className="absolute inset-0 rounded-xl sm:rounded-2xl z-10"
                 style={{ border: "1px solid rgba(168,85,247,0.2)" }}
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -272,7 +284,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 0.8 }}
-          className="mt-10 flex items-center gap-8 sm:gap-12"
+          className="mt-10 flex items-center gap-4 sm:gap-8 md:gap-12"
         >
           <AnimatedStat value={500} suffix="+" label="服務客戶" />
           <div className="h-8 w-px" style={{ background: "linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent)" }} />
@@ -282,12 +294,12 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll hint */}
+      {/* Scroll hint - hidden on mobile */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.2, duration: 1 }}
-        className="absolute bottom-[48%] left-1/2 z-10 -translate-x-1/2 pointer-events-none"
+        className="absolute bottom-[48%] left-1/2 z-10 -translate-x-1/2 pointer-events-none hidden sm:block"
       >
         <motion.p
           animate={{ opacity: [0.4, 0.8, 0.4] }}
