@@ -183,25 +183,25 @@ export default function HeroSection() {
           }}
         >
           <a
-            href="https://wa.me/85254987176"
+            href="https://wa.me/85246476921"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 transition-colors hover:opacity-80"
             style={{ color: "#C9A84C" }}
           >
             <span>📱</span>
-            <span className="font-medium">WhatsApp: 5498 7176</span>
+            <span className="font-medium">WhatsApp: 4647 6921</span>
           </a>
           <span className="hidden sm:inline" style={{ color: "rgba(201,168,76,0.3)" }}>|</span>
           <a
-            href="https://t.me/tarot_inft"
+            href="https://t.me/ami28283728"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden items-center gap-1.5 transition-colors hover:opacity-80 sm:flex"
             style={{ color: "#C9A84C" }}
           >
             <span>✈️</span>
-            <span className="font-medium">Telegram: @tarot_inft</span>
+            <span className="font-medium">Telegram: @ami28283728</span>
           </a>
           <span className="hidden md:inline" style={{ color: "rgba(201,168,76,0.3)" }}>|</span>
           <a
@@ -312,7 +312,7 @@ export default function HeroSection() {
           className="mt-6 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:gap-5"
         >
           <a
-            href="https://wa.me/85254987176"
+            href="https://wa.me/85246476921"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-2.5 rounded-full px-8 py-3.5 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_40px_rgba(201,168,76,0.35)]"

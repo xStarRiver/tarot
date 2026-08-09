@@ -168,7 +168,7 @@ export default function CoursesProducts() {
             className="mt-4"
           >
             <a
-              href="https://wa.me/85254987176"
+              href="https://wa.me/85246476921"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-medium transition-colors hover:opacity-80"
@@ -252,7 +252,7 @@ export default function CoursesProducts() {
             className="mt-4"
           >
             <a
-              href="https://wa.me/85254987176"
+              href="https://wa.me/85246476921"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-medium transition-colors hover:opacity-80"
@@ -289,7 +289,7 @@ export default function CoursesProducts() {
               歡迎 WhatsApp 查詢，為你安排最合適的服務
             </p>
             <a
-              href="https://wa.me/85254987176"
+              href="https://wa.me/85246476921"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-medium transition-all duration-300 hover:scale-105"

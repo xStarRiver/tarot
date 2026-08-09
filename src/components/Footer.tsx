@@ -24,12 +24,12 @@ const socialLinks = [
   {
     icon: WhatsAppIcon,
     label: "WhatsApp",
-    href: "https://wa.me/85254987176",
+    href: "https://wa.me/85246476921",
   },
   {
     icon: Send,
     label: "Telegram",
-    href: "https://t.me/tarot_inft",
+    href: "https://t.me/ami28283728",
   },
   {
     icon: Camera,
@@ -71,14 +71,14 @@ export default function Footer() {
             <div className="mt-5 space-y-2 text-sm text-[#A1A1AA]">
               <p>
                 WhatsApp:{" "}
-                <a href="https://wa.me/85254987176" className="text-[#C9A84C] transition-colors hover:text-[#E8D48B]">
-                  5498 7176
+                <a href="https://wa.me/85246476921" className="text-[#C9A84C] transition-colors hover:text-[#E8D48B]">
+                  4647 6921
                 </a>
               </p>
               <p>
                 Telegram:{" "}
-                <a href="https://t.me/tarot_inft" className="text-[#C9A84C] transition-colors hover:text-[#E8D48B]">
-                  @tarot_inft
+                <a href="https://t.me/ami28283728" className="text-[#C9A84C] transition-colors hover:text-[#E8D48B]">
+                  @ami28283728
                 </a>
               </p>
               <p>
@@ -155,7 +155,7 @@ export default function Footer() {
 
             {/* Booking CTA */}
             <a
-              href="https://wa.me/85254987176"
+              href="https://wa.me/85246476921"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary mt-6"

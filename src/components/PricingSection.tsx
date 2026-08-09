@@ -141,7 +141,7 @@ export default function PricingSection() {
 
               {/* CTA */}
               <a
-                href="https://wa.me/85254987176"
+                href="https://wa.me/85246476921"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={tier.highlight ? "btn-primary w-full" : "btn-secondary w-full"}

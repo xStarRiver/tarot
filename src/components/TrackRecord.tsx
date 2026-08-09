@@ -146,7 +146,7 @@ export default function TrackRecord() {
           className="mt-10 text-center"
         >
           <a
-            href="https://wa.me/85254987176"
+            href="https://wa.me/85246476921"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-medium transition-all duration-300 hover:scale-105"

@@ -9,7 +9,7 @@ export default function FloatingCTA() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-2.5">
       {/* Telegram */}
       <motion.a
-        href="https://t.me/tarot_inft"
+        href="https://t.me/ami28283728"
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0, opacity: 0 }}
@@ -29,7 +29,7 @@ export default function FloatingCTA() {
 
       {/* WhatsApp */}
       <motion.a
-        href="https://wa.me/85254987176"
+        href="https://wa.me/85246476921"
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0, opacity: 0 }}

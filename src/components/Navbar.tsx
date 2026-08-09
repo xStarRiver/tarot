@@ -72,7 +72,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3">
           {/* WhatsApp - always visible */}
           <a
-            href="https://wa.me/85254987176"
+            href="https://wa.me/85246476921"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 hover:scale-105 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
@@ -83,7 +83,7 @@ export default function Navbar() {
             }}
           >
             <WhatsAppIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            <span className="hidden min-[400px]:inline">5498 7176</span>
+            <span className="hidden min-[400px]:inline">4647 6921</span>
             <span className="min-[400px]:hidden">
               <Phone className="h-3 w-3" />
             </span>
@@ -91,7 +91,7 @@ export default function Navbar() {
 
           {/* Telegram - visible on sm+ */}
           <a
-            href="https://t.me/tarot_inft"
+            href="https://t.me/ami28283728"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 hover:scale-105 sm:flex sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
@@ -102,7 +102,7 @@ export default function Navbar() {
             }}
           >
             <Send className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            @tarot_inft
+            @ami28283728
           </a>
 
           {/* Instagram - visible on md+ */}
@@ -123,7 +123,7 @@ export default function Navbar() {
 
           {/* Mobile icon buttons for Telegram and IG */}
           <a
-            href="https://t.me/tarot_inft"
+            href="https://t.me/ami28283728"
             target="_blank"
             rel="noopener noreferrer"
             className="flex h-8 w-8 items-center justify-center rounded-full transition-all duration-300 hover:scale-110 sm:hidden"
