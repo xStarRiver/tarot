@@ -121,10 +121,10 @@ function AnimatedStat({ value, label, suffix = "" }: { value: number; label: str
 
   return (
     <div className="text-center">
-      <p className="text-2xl font-bold text-gradient-gold sm:text-3xl">
+      <p className="text-xl font-bold text-gradient-gold sm:text-2xl md:text-3xl">
         {count}{suffix}
       </p>
-      <p className="mt-1 text-[11px] uppercase tracking-wider text-[#6B6B76]">{label}</p>
+      <p className="mt-1 text-[10px] uppercase tracking-wider text-[#6B6B76] sm:text-[11px]">{label}</p>
     </div>
   );
 }
@@ -172,7 +172,7 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
-        className="absolute top-16 left-0 right-0 z-20"
+        className="absolute top-14 left-0 right-0 z-20 sm:top-16"
       >
         <div
           className="flex items-center justify-center gap-3 px-4 py-2 text-[10px] sm:gap-6 sm:text-xs md:gap-8"
@@ -225,7 +225,7 @@ export default function HeroSection() {
       {/* Content (upper half) */}
       <motion.div
         style={{ opacity, y, scale }}
-        className="relative z-10 flex h-[55%] flex-col items-center justify-center px-6 pt-10 text-center"
+        className="relative z-10 flex h-[60%] flex-col items-center justify-center px-4 pt-20 text-center sm:h-[55%] sm:px-6 sm:pt-10"
       >
         {/* Badge */}
         <motion.div
@@ -235,7 +235,7 @@ export default function HeroSection() {
           className="mb-6"
         >
           <div
-            className="inline-flex items-center gap-2.5 rounded-full px-6 py-2.5 text-sm backdrop-blur-xl"
+            className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs backdrop-blur-xl sm:gap-2.5 sm:px-6 sm:py-2.5 sm:text-sm"
             style={{
               border: "1px solid rgba(201,168,76,0.3)",
               background: "linear-gradient(135deg, rgba(19,19,32,0.7), rgba(40,20,60,0.5))",
@@ -255,7 +255,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl font-bold leading-[1.05] sm:text-6xl md:text-7xl lg:text-8xl"
+          className="text-4xl font-bold leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
           style={{ fontFamily: "'Noto Serif TC', serif", letterSpacing: "0.03em" }}
         >
           <span
@@ -309,7 +309,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 0.8 }}
-          className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:gap-5"
+          className="mt-6 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:gap-5"
         >
           <a
             href="https://wa.me/85254987176"
@@ -348,7 +348,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.8, duration: 0.8 }}
-          className="mt-10 flex items-center gap-4 sm:gap-8 md:gap-12"
+          className="mt-6 flex items-center gap-3 sm:mt-10 sm:gap-8 md:gap-12"
         >
           <AnimatedStat value={500} suffix="+" label="服務客戶" />
           <div className="h-8 w-px" style={{ background: "linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent)" }} />

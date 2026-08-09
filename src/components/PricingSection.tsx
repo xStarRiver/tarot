@@ -79,7 +79,7 @@ export default function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className={`relative flex flex-col p-7 md:p-8 ${tier.highlight ? "card-glass-gold" : "card-glass"}`}
+              className={`relative flex flex-col p-5 sm:p-7 md:p-8 ${tier.highlight ? "card-glass-gold" : "card-glass"}`}
             >
               {/* Badge */}
               {tier.badge && (
@@ -109,8 +109,8 @@ export default function PricingSection() {
               </div>
 
               {/* Price */}
-              <div className="mb-8 flex items-baseline gap-1">
-                <span className={`text-4xl font-bold ${tier.highlight ? "text-gradient-gold" : "text-[#F5F5F7]"}`}>
+              <div className="mb-6 flex items-baseline gap-1">
+                <span className={`text-3xl font-bold sm:text-4xl ${tier.highlight ? "text-gradient-gold" : "text-[#F5F5F7]"}`}>
                   {tier.price}
                 </span>
                 <span className="text-sm text-[#6B6B76]">/ {tier.unit}</span>

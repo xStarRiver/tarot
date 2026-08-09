@@ -101,12 +101,13 @@ export default function CoursesProducts() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className={`group relative flex items-center justify-between rounded-xl p-4 sm:p-5 transition-all duration-300 ${course.tag ? 'ring-1 ring-[rgba(201,168,76,0.3)]' : ''}`}
+                className={`group relative rounded-xl p-3.5 sm:p-5 transition-all duration-300 ${course.tag ? 'ring-1 ring-[rgba(201,168,76,0.3)]' : ''}`}
                 style={{
                   background: course.tag ? "rgba(201,168,76,0.04)" : "rgba(14,14,20,0.5)",
                   border: course.tag ? "1px solid rgba(201,168,76,0.2)" : "1px solid rgba(255,255,255,0.04)",
                 }}
               >
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-3 flex-wrap">
                     <h4
@@ -137,7 +138,7 @@ export default function CoursesProducts() {
                     {course.description}
                   </p>
                 </div>
-                <div className="ml-4 shrink-0 text-right">
+                <div className="shrink-0 sm:text-right">
                   <span
                     className="text-base font-bold sm:text-lg"
                     style={{
@@ -148,6 +149,7 @@ export default function CoursesProducts() {
                   >
                     {course.price}
                   </span>
+                </div>
                 </div>
 
                 {/* Hover border */}
@@ -271,7 +273,7 @@ export default function CoursesProducts() {
           className="mt-14 text-center"
         >
           <div
-            className="rounded-2xl p-8 sm:p-10"
+            className="rounded-2xl p-5 sm:p-8 md:p-10"
             style={{
               background: "linear-gradient(135deg, rgba(201,168,76,0.04), rgba(14,14,20,0.8))",
               border: "1px solid rgba(201,168,76,0.1)",

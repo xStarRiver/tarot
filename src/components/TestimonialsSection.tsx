@@ -168,8 +168,8 @@ export default function TestimonialsSection() {
                 key={idx}
                 className="group relative flex-shrink-0 cursor-pointer overflow-hidden rounded-xl transition-transform duration-300 hover:scale-[1.03]"
                 style={{
-                  width: "clamp(200px, 40vw, 280px)",
-                  height: "clamp(270px, 55vw, 380px)",
+                  width: "clamp(160px, 38vw, 280px)",
+                  height: "clamp(220px, 52vw, 380px)",
                   border: "1px solid rgba(255,255,255,0.06)",
                   background: "rgba(19,19,32,0.5)",
                 }}
@@ -259,18 +259,8 @@ export default function TestimonialsSection() {
               <img
                 src={zoomedImage}
                 alt="客戶反饋"
-                className="h-auto max-h-[85vh] w-auto object-contain"
+                className="h-auto max-h-[85vh] w-auto max-w-[90vw] object-contain"
               />
-              {/* Placeholder for missing image */}
-              <div
-                className="flex h-[400px] w-[300px] items-center justify-center"
-                style={{ background: "rgba(19,19,32,0.9)" }}
-              >
-                <div className="text-center">
-                  <Quote className="mx-auto h-10 w-10" style={{ color: "#C9A84C" }} />
-                  <p className="mt-3 text-sm" style={{ color: "#6B6B76" }}>上傳客戶反饋截圖後顯示</p>
-                </div>
-              </div>
             </motion.div>
           </motion.div>
         )}
