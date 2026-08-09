@@ -6,37 +6,46 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 
 const courses = [
   {
-    title: "奇門遁甲入門班",
-    description: "從零開始學習奇門盤的排列與基礎判斷",
-    price: "$4,888",
-    duration: "8堂課",
-  },
-  {
-    title: "風水佈局實戰班",
-    description: "居家/辦公室風水實操，學會自我調整",
-    price: "$6,888",
+    title: "一對一基礎教學",
+    description: "從零開始學習奇門遁甲，掌握基礎排盤與判斷技巧",
+    price: "$5,000",
     duration: "6堂課",
+    tag: "",
   },
   {
-    title: "高級擇時策略班",
-    description: "深度學習時間選擇法，適用投資與決策",
-    price: "$12,888",
-    duration: "10堂課",
+    title: "一對一進階教學",
+    description: "深入學習高階技法，實戰案例分析與擇時策略",
+    price: "$8,000",
+    duration: "6堂課",
+    tag: "",
+  },
+  {
+    title: "基礎 + 進階同報優惠",
+    description: "一次報讀基礎與進階課程，享套裝優惠價，慳 $2,112",
+    price: "$10,888",
+    duration: "12堂課",
+    tag: "至抵套裝",
   },
 ];
 
 const products = [
   {
-    title: "開運桃花香水",
+    title: "開運香水",
     description: "特製法物，經過開光加持。提升人緣桃花，適合求姻緣或改善人際關係。",
-    price: "$888",
+    price: "$1,500",
     tag: "熱賣",
   },
   {
-    title: "財運水晶手鏈",
-    description: "嚴選天然黃水晶搭配金曜石，經奇門擇時開光。助旺偏財運及正財運。",
-    price: "$1,288",
-    tag: "限量",
+    title: "開運手鏈",
+    description: "嚴選天然水晶搭配金曜石，經奇門擇時開光。助旺偏財運及正財運。",
+    price: "$2,000",
+    tag: "人氣",
+  },
+  {
+    title: "開運頸鏈",
+    description: "精選天然寶石配以銀飾，經開光加持。護身辟邪，提升整體運勢氣場。",
+    price: "$2,200",
+    tag: "新品",
   },
 ];
 
@@ -92,10 +101,10 @@ export default function CoursesProducts() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="group flex items-center justify-between rounded-xl p-4 sm:p-5 transition-all duration-300"
+                className={`group relative flex items-center justify-between rounded-xl p-4 sm:p-5 transition-all duration-300 ${course.tag ? 'ring-1 ring-[rgba(201,168,76,0.3)]' : ''}`}
                 style={{
-                  background: "rgba(14,14,20,0.5)",
-                  border: "1px solid rgba(255,255,255,0.04)",
+                  background: course.tag ? "rgba(201,168,76,0.04)" : "rgba(14,14,20,0.5)",
+                  border: course.tag ? "1px solid rgba(201,168,76,0.2)" : "1px solid rgba(255,255,255,0.04)",
                 }}
               >
                 <div className="flex-1 min-w-0">
@@ -112,6 +121,17 @@ export default function CoursesProducts() {
                     >
                       {course.duration}
                     </span>
+                    {course.tag && (
+                      <span
+                        className="text-[10px] font-bold px-2.5 py-0.5 rounded-md"
+                        style={{
+                          background: "linear-gradient(135deg, #8B7332, #C9A84C, #E8D48B)",
+                          color: "#08080C",
+                        }}
+                      >
+                        {course.tag}
+                    </span>
+                    )}
                   </div>
                   <p className="mt-1 text-xs sm:text-sm text-[#6B6B76]">
                     {course.description}
@@ -172,7 +192,7 @@ export default function CoursesProducts() {
           >
             精選法物
           </h3>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((product, idx) => (
               <motion.div
                 key={product.title}

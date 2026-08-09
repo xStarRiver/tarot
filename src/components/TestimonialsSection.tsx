@@ -4,27 +4,33 @@ import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Quote, X } from "lucide-react";
 
-// ─── Placeholder testimonial images ─────────────────────────
-// Replace these with real screenshots later
-const testimonialImages = Array.from({ length: 12 }, (_, i) => ({
-  src: `/images/testimonials/feedback-${i + 1}.png`,
-  alt: `客戶反饋 ${i + 1}`,
-  // Placeholder gradient colors for demo
-  placeholderGradient: [
-    "from-purple-900/40 to-indigo-900/40",
-    "from-indigo-900/40 to-blue-900/40",
-    "from-violet-900/40 to-purple-900/40",
-    "from-fuchsia-900/40 to-purple-900/40",
-    "from-purple-900/40 to-pink-900/40",
-    "from-blue-900/40 to-violet-900/40",
-    "from-indigo-900/40 to-fuchsia-900/40",
-    "from-purple-900/40 to-indigo-900/40",
-    "from-violet-900/40 to-blue-900/40",
-    "from-fuchsia-900/40 to-indigo-900/40",
-    "from-purple-900/40 to-violet-900/40",
-    "from-blue-900/40 to-purple-900/40",
-  ][i],
-}));
+// ─── Real testimonial screenshots ─────────────────────────
+const testimonialImages = [
+  { src: "/images/testimonials/1.jpg", alt: "客戶反饋 — 續約成功，運輸業務擴展" },
+  { src: "/images/testimonials/2.jpg", alt: "客戶反饋 — 生意回升，拜師成願" },
+  { src: "/images/testimonials/3.jpg", alt: "客戶反饋 — 奇門遁甲佈局成功簽單" },
+  { src: "/images/testimonials/4.jpg", alt: "客戶反饋 — 職場化解小人" },
+  { src: "/images/testimonials/5.jpg", alt: "客戶反饋 — 七年長期客戶見證" },
+  { src: "/images/testimonials/6.jpg", alt: "客戶反饋 — 佛牌準確預測" },
+  { src: "/images/testimonials/7.jpg", alt: "客戶反饋 — 簽單成功，業績提升" },
+  { src: "/images/testimonials/8.jpg", alt: "客戶反饋 — 客戶置業創業成功" },
+  { src: "/images/testimonials/9.jpg", alt: "客戶反饋 — 風水選樓精準預測" },
+  { src: "/images/testimonials/10.jpg", alt: "客戶反饋 — 客戶揀車開公司" },
+  { src: "/images/testimonials/11.jpg", alt: "客戶反饋 — 學生好評推薦" },
+  { src: "/images/testimonials/12.jpg", alt: "客戶反饋 — 命格分析精準" },
+  { src: "/images/testimonials/13.jpg", alt: "客戶反饋 — 預測官非準確" },
+  { src: "/images/testimonials/14.jpg", alt: "客戶反饋 — 感情諮詢成功" },
+  { src: "/images/testimonials/15.jpg", alt: "客戶反饋 — 風水佈局驗證" },
+  { src: "/images/testimonials/16.jpg", alt: "客戶反饋 — 六合彩中獎" },
+  { src: "/images/testimonials/17.jpg", alt: "客戶反饋 — 追債成功預測" },
+  { src: "/images/testimonials/18.jpg", alt: "客戶反饋 — 健康預測精準" },
+  { src: "/images/testimonials/19.jpg", alt: "客戶反饋 — 流年運程分析" },
+  { src: "/images/testimonials/20.jpg", alt: "客戶反饋 — 招財豬好評" },
+  { src: "/images/testimonials/21.jpg", alt: "客戶反饋 — 百萬生意佈局" },
+  { src: "/images/testimonials/22.jpg", alt: "客戶反饋 — 識人不善化解" },
+  { src: "/images/testimonials/23.jpg", alt: "客戶反饋 — 豪宅風水睇樓" },
+  { src: "/images/testimonials/24.jpg", alt: "客戶反饋 — 財運佈局收款成功" },
+];
 
 // Duplicate for infinite scroll
 const duplicatedImages = [...testimonialImages, ...testimonialImages];
@@ -169,31 +175,13 @@ export default function TestimonialsSection() {
                 }}
                 onClick={() => setZoomedImage(image.src)}
               >
-                {/* Placeholder content (replace with real images) */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${image.placeholderGradient}`} />
-
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="relative z-10 h-full w-full object-cover"
+                  className="h-full w-full object-cover"
                   loading="lazy"
-                  onError={(e) => {
-                    // Hide broken image, show placeholder
-                    (e.currentTarget as HTMLImageElement).style.display = "none";
-                  }}
                 />
-
-                {/* Placeholder text for missing images */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 z-[5]">
-                  <div
-                    className="rounded-full p-4"
-                    style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)" }}
-                  >
-                    <Quote className="h-6 w-6" style={{ color: "#C9A84C" }} />
-                  </div>
-                  <p className="text-xs" style={{ color: "#6B6B76" }}>客戶反饋截圖</p>
-                </div>
 
                 {/* Hover overlay */}
                 <div

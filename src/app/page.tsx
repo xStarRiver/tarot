@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import PricingSection from "@/components/PricingSection";
 import TrackRecord from "@/components/TrackRecord";
@@ -8,6 +9,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden" style={{ backgroundColor: "#08080C" }}>
+      <Navbar />
       <HeroSection />
       <TestimonialsSection />
       <PricingSection />

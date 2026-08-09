@@ -153,6 +153,70 @@ export default function HeroSection() {
         />
       </div>
 
+      {/* Pink nebula glow */}
+      <div
+        className="pointer-events-none absolute z-[1]"
+        style={{
+          top: "15%",
+          right: "-5%",
+          width: "500px",
+          height: "500px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(236,72,153,0.12) 0%, rgba(219,39,119,0.05) 40%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
+
+      {/* Contact Info Banner - below navbar */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+        className="absolute top-16 left-0 right-0 z-20"
+      >
+        <div
+          className="flex items-center justify-center gap-3 px-4 py-2 text-[10px] sm:gap-6 sm:text-xs md:gap-8"
+          style={{
+            background: "linear-gradient(90deg, rgba(201,168,76,0.06), rgba(201,168,76,0.12), rgba(201,168,76,0.06))",
+            borderBottom: "1px solid rgba(201,168,76,0.1)",
+            backdropFilter: "blur(10px)",
+          }}
+        >
+          <a
+            href="https://wa.me/85254987176"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 transition-colors hover:opacity-80"
+            style={{ color: "#C9A84C" }}
+          >
+            <span>📱</span>
+            <span className="font-medium">WhatsApp: 5498 7176</span>
+          </a>
+          <span className="hidden sm:inline" style={{ color: "rgba(201,168,76,0.3)" }}>|</span>
+          <a
+            href="https://t.me/tarot_inft"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden items-center gap-1.5 transition-colors hover:opacity-80 sm:flex"
+            style={{ color: "#C9A84C" }}
+          >
+            <span>✈️</span>
+            <span className="font-medium">Telegram: @tarot_inft</span>
+          </a>
+          <span className="hidden md:inline" style={{ color: "rgba(201,168,76,0.3)" }}>|</span>
+          <a
+            href="https://instagram.com/thai_4646"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden items-center gap-1.5 transition-colors hover:opacity-80 md:flex"
+            style={{ color: "#C9A84C" }}
+          >
+            <span>📷</span>
+            <span className="font-medium">IG: thai_4646 / tarot_inft661</span>
+          </a>
+        </div>
+      </motion.div>
+
 
 
       {/* Card Carousel */}
@@ -161,7 +225,7 @@ export default function HeroSection() {
       {/* Content (upper half) */}
       <motion.div
         style={{ opacity, y, scale }}
-        className="relative z-10 flex h-[55%] flex-col items-center justify-center px-6 text-center"
+        className="relative z-10 flex h-[55%] flex-col items-center justify-center px-6 pt-10 text-center"
       >
         {/* Badge */}
         <motion.div
