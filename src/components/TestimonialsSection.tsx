@@ -122,7 +122,7 @@ export default function TestimonialsSection() {
             className="mx-auto mt-3 max-w-md text-sm leading-relaxed sm:text-base"
             style={{ color: "#8B8B96", fontFamily: "'Noto Serif TC', serif" }}
           >
-            超過 500 位客戶的真實體驗，用心服務每一位有緣人
+            超過 10,000 位客戶的真實體驗，用心服務每一位有緣人
           </p>
 
           {/* Rating */}
@@ -139,7 +139,7 @@ export default function TestimonialsSection() {
               ))}
             </div>
             <span className="text-sm font-medium" style={{ color: "#C9A84C" }}>5.0</span>
-            <span className="text-xs" style={{ color: "#6B6B76" }}>（500+ 好評）</span>
+            <span className="text-xs" style={{ color: "#6B6B76" }}>（10,000+ 好評）</span>
           </div>
         </motion.div>
 

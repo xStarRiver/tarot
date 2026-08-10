@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Send } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 
 export default function FloatingCTA() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-2.5">
-      {/* Telegram */}
+      {/* Instagram */}
       <motion.a
-        href="https://t.me/ami28283728"
+        href="https://instagram.com/tarot_inft661"
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0, opacity: 0 }}
@@ -19,12 +19,12 @@ export default function FloatingCTA() {
         whileTap={{ scale: 0.95 }}
         className="flex h-12 w-12 items-center justify-center rounded-2xl shadow-lg transition-shadow"
         style={{
-          background: "linear-gradient(135deg, #0088cc, #00aaee)",
-          boxShadow: "0 4px 20px rgba(0, 136, 204, 0.3)",
+          background: "linear-gradient(135deg, #F58529, #DD2A7B, #8134AF, #515BD4)",
+          boxShadow: "0 4px 20px rgba(221, 42, 123, 0.3)",
         }}
-        aria-label="Telegram 聯繫"
+        aria-label="Instagram 聯繫"
       >
-        <Send className="h-5 w-5 text-white" />
+        <Instagram className="h-5 w-5 text-white" />
       </motion.a>
 
       {/* WhatsApp */}

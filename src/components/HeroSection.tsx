@@ -122,7 +122,7 @@ function AnimatedStat({ value, label, suffix = "" }: { value: number; label: str
   return (
     <div className="text-center">
       <p className="text-xl font-bold text-gradient-gold sm:text-2xl md:text-3xl">
-        {count}{suffix}
+        {count.toLocaleString()}{suffix}
       </p>
       <p className="mt-1 text-[10px] uppercase tracking-wider text-[#6B6B76] sm:text-[11px]">{label}</p>
     </div>
@@ -350,7 +350,7 @@ export default function HeroSection() {
           transition={{ delay: 1.8, duration: 0.8 }}
           className="mt-6 flex items-center gap-3 sm:mt-10 sm:gap-8 md:gap-12"
         >
-          <AnimatedStat value={500} suffix="+" label="服務客戶" />
+          <AnimatedStat value={10000} suffix="+" label="服務客戶" />
           <div className="h-8 w-px" style={{ background: "linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent)" }} />
           <AnimatedStat value={10} suffix="年+" label="從業經驗" />
           <div className="h-8 w-px" style={{ background: "linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent)" }} />
