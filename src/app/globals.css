@@ -284,3 +284,104 @@ body {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.3), transparent);
 }
+
+/* ========== BLOG CONTENT ========== */
+.blog-content {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+.blog-content h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-gold);
+  color: var(--color-text-primary);
+}
+
+.blog-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1.8rem 0 0.8rem;
+  color: var(--color-gold-light);
+}
+
+.blog-content p {
+  margin: 1rem 0;
+  color: var(--color-text-secondary);
+}
+
+.blog-content strong {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.blog-content a {
+  color: var(--color-gold-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.blog-content ul, .blog-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  color: var(--color-text-secondary);
+}
+
+.blog-content li {
+  margin: 0.4rem 0;
+}
+
+.blog-content table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.blog-content th {
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 0.8rem;
+  color: var(--color-gold-light);
+  font-weight: 600;
+  text-align: left;
+}
+
+.blog-content td {
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.blog-content figure {
+  margin: 1.5rem 0;
+}
+
+.blog-content figure img {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+}
+
+.blog-content blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--color-gold);
+  background: rgba(201, 168, 76, 0.06);
+  border-radius: 0 0.75rem 0.75rem 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-serif);
+}
+
+.blog-content hr {
+  border: none;
+  height: 1px;
+  margin: 2.5rem 0;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.4), transparent);
+}

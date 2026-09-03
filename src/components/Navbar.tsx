@@ -70,6 +70,19 @@ export default function Navbar() {
 
         {/* Contact Info */}
         <div className="flex items-center gap-2 sm:gap-3">
+          {/* Blog link */}
+          <a
+            href="/blog"
+            className="hidden items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 hover:scale-105 sm:flex sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
+            style={{
+              background: "rgba(201, 168, 76, 0.08)",
+              border: "1px solid rgba(201, 168, 76, 0.25)",
+              color: "#E8D48B",
+            }}
+          >
+            博客
+          </a>
+
           {/* WhatsApp - always visible */}
           <a
             href="https://wa.me/85246476921"

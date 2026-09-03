@@ -53,6 +53,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Tarot INFT 奇門遁甲",
+              url: "https://www.tarotinft.net",
+              logo: "https://www.tarotinft.net/logo.png",
+              description:
+                "奇門遁甲預測、風水佈局、開運法物及一對一課程。精準預測，無需八字。",
+              sameAs: [
+                "https://www.instagram.com/thai_4646",
+                "https://www.instagram.com/tarot_inft661",
+                "https://www.youtube.com/@Tarot_fox",
+                "https://t.me/ami28283728",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+852-46476921",
+                contactType: "customer service",
+                availableLanguage: ["zh-HK", "zh-TW"],
+              },
+            }),
+          }}
+        />
         {children}
         <FloatingCTA />
       </body>
