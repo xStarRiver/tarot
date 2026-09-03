@@ -20,6 +20,22 @@ interface BlogData {
 
 const blogsData = blogs as BlogData[];
 
+/**
+ * Blog content is injected via dangerouslySetInnerHTML. Content created
+ * outside this repo occasionally ships HTML-entity-escaped anchors
+ * (e.g. &lt;a href="..."&gt;), which would render as visible "<a ...>"
+ * text instead of links. Decode the common entities once at render time.
+ * (&amp; is decoded last so &amp;lt;-style text isn't double-decoded.)
+ */
+function decodeHtmlEntities(html: string): string {
+  return html
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, "&");
+}
+
 export function generateStaticParams() {
   return blogsData.map((b) => ({ slug: b.slug }));
 }
@@ -174,7 +190,7 @@ export default async function BlogPostPage({
         {/* Content */}
         <div
           className="blog-content"
-          dangerouslySetInnerHTML={{ __html: blog.contentHtml }}
+          dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(blog.contentHtml) }}
         />
 
         {/* FAQ section (visible + FAQPage schema) */}

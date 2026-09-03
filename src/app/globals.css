@@ -360,13 +360,27 @@ body {
 }
 
 .blog-content figure {
-  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.25rem 0;
 }
 
 .blog-content figure img {
-  width: 100%;
-  border-radius: 1rem;
+  width: auto;
+  max-width: min(100%, 28rem);
+  height: auto;
+  max-height: 30rem;
+  border-radius: 1.25rem;
   border: 1px solid rgba(201, 168, 76, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.blog-content figcaption {
+  margin-top: 0.85rem;
+  font-size: 0.8rem;
+  color: #6b6b76;
+  text-align: center;
 }
 
 .blog-content blockquote {
