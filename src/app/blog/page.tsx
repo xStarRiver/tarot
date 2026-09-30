@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import blogs from "@/data/blogs.json";
+import { encodeSlug } from "@/lib/slugs";
 
 export const metadata: Metadata = {
   title: "玄學博客｜奇門遁甲指南 - Tarot INFT",
@@ -53,7 +54,7 @@ export default function BlogListPage() {
             {blogs.map((blog) => (
               <Link
                 key={blog.slug}
-                href={`/blog/${blog.slug}`}
+                href={`/blog/${encodeSlug(blog.slug)}`}
                 className="group overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1"
                 style={{
                   backgroundColor: "#131320",

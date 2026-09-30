@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import blogs from "@/data/blogs.json";
+import { decodeSlug, encodeSlug } from "@/lib/slugs";
 
 interface BlogData {
   slug: string;
@@ -46,20 +47,21 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const blog = blogsData.find((b) => b.slug === slug);
+  const blog = blogsData.find((b) => b.slug === decodeSlug(slug));
   if (!blog) return {};
+  const url = `https://www.tarotinft.net/blog/${encodeSlug(blog.slug)}`;
   return {
     title: `${blog.title} - Tarot INFT 奇門遁甲`,
     description: blog.metaDescription,
     keywords: blog.keywords,
     alternates: {
-      canonical: `https://www.tarotinft.net/blog/${blog.slug}`,
+      canonical: url,
     },
     openGraph: {
       title: blog.title,
       description: blog.metaDescription,
       type: "article",
-      url: `https://www.tarotinft.net/blog/${blog.slug}`,
+      url,
       siteName: "Tarot INFT 奇門遁甲",
       images: [{ url: `https://www.tarotinft.net${blog.cover}`, width: 1200, height: 630 }],
       publishedTime: blog.date,
@@ -79,10 +81,11 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const blog = blogsData.find((b) => b.slug === slug);
+  const blog = blogsData.find((b) => b.slug === decodeSlug(slug));
   if (!blog) notFound();
 
-  const related = blogsData.filter((b) => b.slug !== slug).slice(0, 3);
+  const postUrl = `https://www.tarotinft.net/blog/${encodeSlug(blog.slug)}`;
+  const related = blogsData.filter((b) => b.slug !== blog.slug).slice(0, 3);
 
   const blogPostingJsonLd = {
     "@context": "https://schema.org",
@@ -94,7 +97,7 @@ export default async function BlogPostPage({
     author: { "@type": "Organization", name: "Tarot INFT 奇門遁甲" },
     publisher: { "@type": "Organization", name: "Tarot INFT 奇門遁甲" },
     image: `https://www.tarotinft.net${blog.cover}`,
-    mainEntityOfPage: `https://www.tarotinft.net/blog/${blog.slug}`,
+    mainEntityOfPage: postUrl,
   };
 
   const breadcrumbJsonLd = {
@@ -107,7 +110,7 @@ export default async function BlogPostPage({
         "@type": "ListItem",
         position: 3,
         name: blog.title.replace(/【[^】]*】/, ""),
-        item: `https://www.tarotinft.net/blog/${blog.slug}`,
+        item: postUrl,
       },
     ],
   };
@@ -284,7 +287,7 @@ export default async function BlogPostPage({
               {related.map((b) => (
                 <Link
                   key={b.slug}
-                  href={`/blog/${b.slug}`}
+                  href={`/blog/${encodeSlug(b.slug)}`}
                   className="group overflow-hidden rounded-xl transition-all duration-300 hover:-translate-y-1"
                   style={{ backgroundColor: "#131320", border: "1px solid #1F1F2E" }}
                 >
