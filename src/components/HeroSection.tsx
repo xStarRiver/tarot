@@ -205,14 +205,14 @@ export default function HeroSection() {
           </a>
           <span className="hidden md:inline" style={{ color: "rgba(201,168,76,0.3)" }}>|</span>
           <a
-            href="https://instagram.com/thai_4646"
+            href="https://instagram.com/tarot_inft661"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden items-center gap-1.5 transition-colors hover:opacity-80 md:flex"
             style={{ color: "#C9A84C" }}
           >
             <span>📷</span>
-            <span className="font-medium">IG: thai_4646 / tarot_inft661</span>
+            <span className="font-medium">IG: tarot_inft661</span>
           </a>
         </div>
       </motion.div>

@@ -34,7 +34,7 @@ const socialLinks = [
   {
     icon: Camera,
     label: "Instagram",
-    href: "https://instagram.com/thai_4646",
+    href: "https://instagram.com/tarot_inft661",
   },
   {
     icon: YoutubeIcon,
@@ -83,10 +83,6 @@ export default function Footer() {
               </p>
               <p>
                 Instagram:{" "}
-                <a href="https://instagram.com/thai_4646" className="text-[#C9A84C] transition-colors hover:text-[#E8D48B]">
-                  thai_4646
-                </a>
-                {" / "}
                 <a href="https://instagram.com/tarot_inft661" className="text-[#C9A84C] transition-colors hover:text-[#E8D48B]">
                   tarot_inft661
                 </a>
