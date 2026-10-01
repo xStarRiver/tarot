@@ -37,6 +37,33 @@ function decodeHtmlEntities(html: string): string {
     .replace(/&amp;/g, "&");
 }
 
+/**
+ * The same externally-authored content also ships inline Markdown — links
+ * like [香港天文台](https://www.hko.gov.hk/) and *emphasis* around
+ * disclaimers — which would render as literal "[text](url)" and visible
+ * asterisks. The content is HTML, so convert just these inline forms rather
+ * than parsing the whole string as Markdown. Link targets are restricted to
+ * http(s) so a javascript: URL can't be smuggled in, and open in a new tab
+ * like the other external links on the page.
+ */
+function renderInlineMarkdown(html: string): string {
+  return html
+    .replace(
+      /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
+    )
+    .replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, "<em>$1</em>");
+}
+
+/**
+ * FAQ questions and answers are rendered as plain text (in the visible
+ * accordion and in the FAQPage JSON-LD), so strip the same Markdown emphasis
+ * markers instead of turning them into tags.
+ */
+function stripInlineMarkdown(text: string): string {
+  return text.replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, "$1");
+}
+
 export function generateStaticParams() {
   return blogsData.map((b) => ({ slug: b.slug }));
 }
@@ -122,8 +149,8 @@ export default async function BlogPostPage({
           "@type": "FAQPage",
           mainEntity: blog.faq.map((f) => ({
             "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
+            name: stripInlineMarkdown(f.q),
+            acceptedAnswer: { "@type": "Answer", text: stripInlineMarkdown(f.a) },
           })),
         }
       : null;
@@ -193,7 +220,9 @@ export default async function BlogPostPage({
         {/* Content */}
         <div
           className="blog-content"
-          dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(blog.contentHtml) }}
+          dangerouslySetInnerHTML={{
+            __html: renderInlineMarkdown(decodeHtmlEntities(blog.contentHtml)),
+          }}
         />
 
         {/* FAQ section (visible + FAQPage schema) */}
@@ -222,10 +251,10 @@ export default async function BlogPostPage({
                     className="cursor-pointer font-serif text-base"
                     style={{ color: "#E8D48B" }}
                   >
-                    {f.q}
+                    {stripInlineMarkdown(f.q)}
                   </summary>
                   <p className="mt-3 text-sm leading-relaxed" style={{ color: "#A1A1AA" }}>
-                    {f.a}
+                    {stripInlineMarkdown(f.a)}
                   </p>
                 </details>
               ))}
