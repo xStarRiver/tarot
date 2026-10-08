@@ -5,31 +5,26 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Star, Quote, X } from "lucide-react";
 
 // ─── Real testimonial screenshots ─────────────────────────
+// This page is the Google Ads landing page. Screenshots showing gambling or
+// lottery slips, health/medical predictions, bank transfer details, or
+// "guaranteed" results (2, 3, 11, 13, 16, 18, 19, 21, 24) are left out —
+// they trigger Google's Misrepresentation / Gambling policies.
 const testimonialImages = [
   { src: "/images/testimonials/1.jpg", alt: "客戶反饋 — 續約成功，運輸業務擴展" },
-  { src: "/images/testimonials/2.jpg", alt: "客戶反饋 — 生意回升，拜師成願" },
-  { src: "/images/testimonials/3.jpg", alt: "客戶反饋 — 奇門遁甲佈局成功簽單" },
   { src: "/images/testimonials/4.jpg", alt: "客戶反饋 — 職場化解小人" },
-  { src: "/images/testimonials/5.jpg", alt: "客戶反饋 — 七年長期客戶見證" },
-  { src: "/images/testimonials/6.jpg", alt: "客戶反饋 — 佛牌準確預測" },
-  { src: "/images/testimonials/7.jpg", alt: "客戶反饋 — 簽單成功，業績提升" },
-  { src: "/images/testimonials/8.jpg", alt: "客戶反饋 — 客戶置業創業成功" },
-  { src: "/images/testimonials/9.jpg", alt: "客戶反饋 — 風水選樓精準預測" },
+  { src: "/images/testimonials/5.jpg", alt: "客戶反饋 — 七年長期客戶" },
+  { src: "/images/testimonials/6.jpg", alt: "客戶反饋 — 佛牌諮詢" },
+  { src: "/images/testimonials/7.jpg", alt: "客戶反饋 — 擇日見客，業績提升" },
+  { src: "/images/testimonials/8.jpg", alt: "客戶反饋 — 客戶置業" },
+  { src: "/images/testimonials/9.jpg", alt: "客戶反饋 — 風水選樓" },
   { src: "/images/testimonials/10.jpg", alt: "客戶反饋 — 客戶揀車開公司" },
-  { src: "/images/testimonials/11.jpg", alt: "客戶反饋 — 學生好評推薦" },
-  { src: "/images/testimonials/12.jpg", alt: "客戶反饋 — 命格分析精準" },
-  { src: "/images/testimonials/13.jpg", alt: "客戶反饋 — 預測官非準確" },
-  { src: "/images/testimonials/14.jpg", alt: "客戶反饋 — 感情諮詢成功" },
-  { src: "/images/testimonials/15.jpg", alt: "客戶反饋 — 風水佈局驗證" },
-  { src: "/images/testimonials/16.jpg", alt: "客戶反饋 — 六合彩中獎" },
-  { src: "/images/testimonials/17.jpg", alt: "客戶反饋 — 追債成功預測" },
-  { src: "/images/testimonials/18.jpg", alt: "客戶反饋 — 健康預測精準" },
-  { src: "/images/testimonials/19.jpg", alt: "客戶反饋 — 流年運程分析" },
+  { src: "/images/testimonials/12.jpg", alt: "客戶反饋 — 命格分析" },
+  { src: "/images/testimonials/14.jpg", alt: "客戶反饋 — 感情諮詢" },
+  { src: "/images/testimonials/15.jpg", alt: "客戶反饋 — 風水佈局" },
+  { src: "/images/testimonials/17.jpg", alt: "客戶反饋 — 財務糾紛分析" },
   { src: "/images/testimonials/20.jpg", alt: "客戶反饋 — 招財豬好評" },
-  { src: "/images/testimonials/21.jpg", alt: "客戶反饋 — 百萬生意佈局" },
   { src: "/images/testimonials/22.jpg", alt: "客戶反饋 — 識人不善化解" },
   { src: "/images/testimonials/23.jpg", alt: "客戶反饋 — 豪宅風水睇樓" },
-  { src: "/images/testimonials/24.jpg", alt: "客戶反饋 — 財運佈局收款成功" },
 ];
 
 // Duplicate for infinite scroll
@@ -125,7 +120,7 @@ export default function TestimonialsSection() {
             超過 10,000 位客戶的真實體驗，用心服務每一位有緣人
           </p>
 
-          {/* Rating */}
+          {/* Source label — no self-awarded star rating (no third-party source) */}
           <div
             className="mt-5 inline-flex items-center gap-2 rounded-full px-5 py-2"
             style={{
@@ -133,13 +128,9 @@ export default function TestimonialsSection() {
               border: "1px solid rgba(201,168,76,0.2)",
             }}
           >
-            <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-3.5 w-3.5 fill-current" style={{ color: "#C9A84C" }} />
-              ))}
-            </div>
-            <span className="text-sm font-medium" style={{ color: "#C9A84C" }}>5.0</span>
-            <span className="text-xs" style={{ color: "#6B6B76" }}>（10,000+ 好評）</span>
+            <Star className="h-3.5 w-3.5 fill-current" style={{ color: "#C9A84C" }} />
+            <span className="text-sm font-medium" style={{ color: "#C9A84C" }}>客戶對話截圖</span>
+            <span className="text-xs" style={{ color: "#6B6B76" }}>WhatsApp / IG</span>
           </div>
         </motion.div>
 
@@ -201,6 +192,10 @@ export default function TestimonialsSection() {
             ))}
           </div>
         </div>
+
+        <p className="mx-auto mt-4 max-w-2xl px-4 text-center text-xs leading-relaxed" style={{ color: "#6B6B76" }}>
+          ＊截圖只反映個別客戶的個人經驗，每人情況不同，結果因人而異，並不保證任何特定結果。
+        </p>
 
         {/* Paused indicator */}
         <AnimatePresence>

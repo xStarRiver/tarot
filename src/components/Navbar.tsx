@@ -39,7 +39,7 @@ export default function Navbar() {
         <a href="#" className="flex items-center gap-3 group">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.png"
+            src="/logo.webp"
             alt="Tarot INFT Logo"
             className="h-8 w-auto max-w-[60px] object-contain transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:max-w-[80px]"
             style={{

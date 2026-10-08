@@ -43,7 +43,7 @@ const socialLinks = [
   },
 ];
 
-const services = ["愛情占卜", "財運佈局", "生意決策", "賭博策略", "風水佈局"];
+const services = ["愛情占卜", "財運佈局", "生意決策", "擇日擇時", "風水佈局"];
 
 export default function Footer() {
   return (
@@ -165,6 +165,9 @@ export default function Footer() {
         {/* Bottom */}
         <div className="divider-gold mt-12" />
         <div className="mt-6 text-center">
+          <p className="mx-auto mb-3 max-w-3xl text-xs leading-relaxed text-[#6B6B76]">
+            免責聲明：所有玄學諮詢及佈局建議只供參考，不能取代醫療、法律、投資或其他專業意見；每人情況不同，結果因人而異，本服務並不保證任何特定結果。
+          </p>
           <p className="text-xs text-[#6B6B76]">
             © {new Date().getFullYear()} Tarot INFT 奇門遁甲. All rights reserved.
           </p>

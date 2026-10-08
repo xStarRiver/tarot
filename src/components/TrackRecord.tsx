@@ -3,38 +3,42 @@
 import { motion } from "framer-motion";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 
+// Google Ads (Misrepresentation → Unreliable claims) limits ads whose landing
+// page promises improbable outcomes or financial returns, and requires a
+// visible "results vary" disclaimer next to testimonials that cite results.
+// Keep these cases free of gambling, investment-return and guarantee claims.
 const cases = [
   {
-    category: "生意翻盤",
-    title: "餐飲集團扭虧為盈",
+    category: "生意決策",
+    title: "餐飲生意由跌轉升",
     description:
-      "客戶經營餐飲連鎖面臨倒閉危機，透過奇門佈局調整店面風水及開業時間，3個月內營業額回升 240%。",
-    result: "營業額增長 240%",
-    highlight: "精準預測最佳擴張時機，避開破產劫數",
+      "客戶經營餐飲生意，營業額持續下滑。透過奇門分析調整店面佈局，並揀選合適時機推出新安排，之後幾個月生意逐步回穩。",
+    result: "生意回穩",
+    highlight: "分析擴張與收縮的時機，協助作出決策",
   },
   {
-    category: "賭博策略",
-    title: "精準時機把握",
+    category: "置業風水",
+    title: "睇樓半年終於揀定",
     description:
-      "客戶投入 2 萬本金，透過奇門遁甲擇時佈局，在特定時辰入場，最終獲利超過 80 萬。",
-    result: "回報 40 倍",
-    highlight: "精準計算最佳入場時辰，勝率大幅提升",
+      "客戶睇樓半年一直拿不定主意。透過奇門遁甲分析方位及時機，配合單位風水評估，最終揀定心儀單位並順利成交。",
+    result: "順利成交",
+    highlight: "方位、時機、單位風水一次過分析",
   },
   {
     category: "感情挽救",
-    title: "分手三年成功復合",
+    title: "分手三年重新走在一起",
     description:
-      "客戶與前任分手三年，透過奇門預測最佳聯絡時機及風水桃花佈局，成功復合並於半年後結婚。",
-    result: "6 個月內結婚",
-    highlight: "精準指出對方心理轉變日期",
+      "客戶與前任分手三年。透過奇門分析雙方狀態及合適的聯絡時機，配合桃花佈局，兩人最終重新走在一起。",
+    result: "成功復合",
+    highlight: "分析對方心態轉變及聯絡時機",
   },
   {
-    category: "投資決策",
-    title: "避開股災，精準抄底",
+    category: "化解小人",
+    title: "職場被針對，局勢逆轉",
     description:
-      "提前兩週預警客戶股市將大跌，建議清倉。跌幅到位後精準提示入場時機，單筆獲利超過 35%。",
-    result: "單筆獲利 35%+",
-    highlight: "預測大盤轉折精準至「日」和「時辰」",
+      "客戶在公司長期被同事針對。透過奇門分析人際形勢，找出問題源頭，再配合辦公室座位及個人佈局，工作環境明顯改善。",
+    result: "工作環境改善",
+    highlight: "先找出源頭，再對症佈局",
   },
 ];
 
@@ -71,7 +75,7 @@ export default function TrackRecord() {
             奇門戰績
           </h2>
           <p className="mt-3 text-sm text-[#8B8B96] max-w-md">
-            精準至日、至時辰的預測實績。以下為真實客戶案例。
+            以下為部分客戶個案分享，個人資料已隱去。
           </p>
         </motion.div>
 
@@ -136,6 +140,10 @@ export default function TrackRecord() {
             </motion.div>
           ))}
         </div>
+
+        <p className="mt-6 text-xs leading-relaxed text-[#6B6B76]">
+          ＊個案只反映個別客戶的情況及經驗，每人情況不同，結果因人而異，並不代表或保證任何特定結果。
+        </p>
 
         {/* Bottom CTA */}
         <motion.div

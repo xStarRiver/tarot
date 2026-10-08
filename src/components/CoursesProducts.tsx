@@ -51,7 +51,7 @@ const products = [
 
 export default function CoursesProducts() {
   return (
-    <section className="relative py-20 sm:py-28">
+    <section id="courses" className="relative py-20 sm:py-28">
       <div
         className="absolute inset-0 opacity-30"
         style={{

@@ -85,7 +85,7 @@ function CardCarousel() {
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/tarot-card.png"
+                src="/images/tarot-card.webp"
                 alt="Tarot"
                 className="h-full w-full object-cover"
               />
@@ -147,7 +147,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/background.png"
+          src="/background.webp"
           alt=""
           className="h-full w-full object-cover"
         />
@@ -370,7 +370,7 @@ export default function HeroSection() {
           <div className="h-8 w-px" style={{ background: "linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent)" }} />
           <AnimatedStat value={10} suffix="年+" label="從業經驗" />
           <div className="h-8 w-px" style={{ background: "linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent)" }} />
-          <AnimatedStat value={98} suffix="%" label="客戶滿意" />
+          <AnimatedStat value={7} suffix="天" label="免費跟進" />
         </motion.div>
       </motion.div>
 
