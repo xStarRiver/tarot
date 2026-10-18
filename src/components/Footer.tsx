@@ -63,9 +63,8 @@ export default function Footer() {
               奇門遁甲
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-[#6B6B76]">
-              精準預測，無需八字。超過10年從業經驗，
-              服務逾10,000位客戶。一對一私密諮詢，
-              內容絕對保密。
+              無需八字。服務逾10,000位客戶。
+              一對一私密諮詢，內容絕對保密。
             </p>
             {/* Contact */}
             <div className="mt-5 space-y-2 text-sm text-[#A1A1AA]">

@@ -8,7 +8,7 @@ import { encodeSlug } from "@/lib/slugs";
 export const metadata: Metadata = {
   title: "玄學博客｜奇門遁甲指南 - Tarot INFT",
   description:
-    "奇門遁甲、塔羅、風水、催財催桃花嘅實用指南。無需八字嘅精準預測原理、真實客戶個案、開運佈局教學，全部免費閱讀。",
+    "奇門遁甲、塔羅、風水、催財催桃花嘅實用指南。無需八字嘅擇時原理、真實客戶個案、開運佈局教學，全部免費閱讀。",
 };
 
 export default function BlogListPage() {
