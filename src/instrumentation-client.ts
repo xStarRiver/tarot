@@ -4,6 +4,7 @@
 // started or became a booking. Prefilling the WhatsApp message with a short
 // source code lets the owner count real enquiries per channel:
 //   (ref: G)  arrived from a Google Ads click (gclid / gbraid / wbraid)
+//   (ref: GS) a Google Ads click from the Search campaign (final URL suffix src=gs)
 //   (ref: M)  arrived from a Meta / Instagram ad (fbclid, utm_source=ig|fb)
 //   (ref: W)  any other website visitor
 // The source is kept in sessionStorage so it survives navigation to /blog.
@@ -12,7 +13,7 @@ const SOURCE_KEY = "tarot_lead_src";
 
 function landingSource(): string | null {
   const params = new URLSearchParams(window.location.search);
-  if (params.has("gclid") || params.has("gbraid") || params.has("wbraid")) return "G";
+  if (params.has("gclid") || params.has("gbraid") || params.has("wbraid")) return params.get("src") === "gs" ? "GS" : "G";
   const utmSource = (params.get("utm_source") ?? "").toLowerCase();
   if (params.has("fbclid") || ["ig", "fb", "facebook", "instagram"].includes(utmSource)) return "M";
   return null;
