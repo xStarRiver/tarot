@@ -18,7 +18,7 @@ export default function FloatingCTA() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-2.5">
       {/* Instagram */}
       <motion.a
-        href="https://instagram.com/tarot_inft661"
+        href="https://instagram.com/Thai_4646"
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0, opacity: 0 }}

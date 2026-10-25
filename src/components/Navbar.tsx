@@ -120,7 +120,7 @@ export default function Navbar() {
 
           {/* Instagram - visible on md+ */}
           <a
-            href="https://instagram.com/tarot_inft661"
+            href="https://instagram.com/Thai_4646"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 hover:scale-105 md:flex md:gap-2 md:px-4 md:py-2 md:text-sm"
@@ -131,7 +131,7 @@ export default function Navbar() {
             }}
           >
             <Camera className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            tarot_inft661
+            Thai_4646
           </a>
 
           {/* Mobile icon buttons for Telegram and IG */}
@@ -150,7 +150,7 @@ export default function Navbar() {
             <Send className="h-3.5 w-3.5" />
           </a>
           <a
-            href="https://instagram.com/tarot_inft661"
+            href="https://instagram.com/Thai_4646"
             target="_blank"
             rel="noopener noreferrer"
             className="flex h-8 w-8 items-center justify-center rounded-full transition-all duration-300 hover:scale-110 sm:hidden"
