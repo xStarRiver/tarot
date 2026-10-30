@@ -1,6 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -13,70 +15,149 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
+const TelegramIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+  </svg>
+);
+
+// Phones: a slim booking bar that slides up once the hero's own buttons have
+// scrolled away, so the price and the booking action are always one tap away
+// without covering content the way a stack of floating buttons does.
+function MobileBookingBar() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.6);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <>
+      <AnimatePresence>
+        {visible && (
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "100%" }}
+            transition={{ type: "spring", stiffness: 320, damping: 32 }}
+            className="fixed inset-x-0 bottom-0 z-50 sm:hidden"
+            style={{
+              background: "rgba(10,10,16,0.92)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+              borderTop: "1px solid rgba(201,168,76,0.2)",
+              boxShadow: "0 -8px 30px rgba(0,0,0,0.4)",
+              paddingBottom: "env(safe-area-inset-bottom)",
+            }}
+          >
+            <div className="flex items-center gap-2.5 px-4 py-2.5">
+              <Link href="/#pricing" className="mr-auto leading-tight">
+                <span className="block text-[10px] text-[#8A8A96]">線上諮詢 · 1 小時</span>
+                <span className="text-lg font-bold text-gradient-gold">$1,388</span>
+                <span className="ml-0.5 text-[11px] text-[#8A8A96]">起</span>
+              </Link>
+              <a
+                href="https://t.me/ami28283728"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram 預約"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white"
+                style={{ background: "linear-gradient(135deg, #0088cc, #00aaee)" }}
+              >
+                <TelegramIcon className="h-5 w-5" />
+              </a>
+              <a
+                href="https://wa.me/85246476921"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-11 shrink-0 items-center gap-2 rounded-full px-5 text-sm font-semibold"
+                style={{
+                  background: "linear-gradient(135deg, #C9A84C, #E8C84C, #C9A84C)",
+                  color: "#1A1A2E",
+                  boxShadow: "0 4px 16px rgba(201,168,76,0.25)",
+                }}
+              >
+                <WhatsAppIcon className="h-4 w-4" />
+                WhatsApp 預約
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {/* Keeps the bar from covering the end of the page */}
+      <div className="h-20 sm:hidden" aria-hidden="true" />
+    </>
+  );
+}
+
 export default function FloatingCTA() {
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-2.5">
-      {/* Instagram */}
-      <motion.a
-        href="https://instagram.com/Thai_4646"
-        target="_blank"
-        rel="noopener noreferrer"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 3, type: "spring", stiffness: 200 }}
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        className="flex h-12 w-12 items-center justify-center rounded-2xl shadow-lg transition-shadow"
-        style={{
-          background: "linear-gradient(135deg, #F58529, #DD2A7B, #8134AF, #515BD4)",
-          boxShadow: "0 4px 20px rgba(221, 42, 123, 0.3)",
-        }}
-        aria-label="Instagram 聯繫"
-      >
-        <InstagramIcon className="h-5 w-5 text-white" />
-      </motion.a>
-
-      {/* Telegram */}
-      <motion.a
-        href="https://t.me/ami28283728"
-        target="_blank"
-        rel="noopener noreferrer"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 3.1, type: "spring", stiffness: 200 }}
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        className="flex h-12 w-12 items-center justify-center rounded-2xl shadow-lg transition-shadow"
-        style={{
-          background: "linear-gradient(135deg, #0088cc, #00aaee)",
-          boxShadow: "0 4px 20px rgba(0, 136, 204, 0.3)",
-        }}
-        aria-label="Telegram 聯繫"
-      >
-        <svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-        </svg>
-      </motion.a>
-
-      {/* WhatsApp */}
-      <motion.a
-        href="https://wa.me/85246476921"
-        target="_blank"
-        rel="noopener noreferrer"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 3.2, type: "spring", stiffness: 200 }}
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        className="animate-pulse-gold flex h-12 w-12 items-center justify-center rounded-2xl shadow-lg transition-shadow"
-        style={{
-          background: "linear-gradient(135deg, #25D366, #128C7E)",
-          boxShadow: "0 4px 20px rgba(37, 211, 102, 0.3)",
-        }}
-        aria-label="WhatsApp 聯繫"
-      >
-        <WhatsAppIcon className="h-5 w-5 text-white" />
-      </motion.a>
-    </div>
+    <>
+      <MobileBookingBar />
+      <div className="fixed bottom-6 right-6 z-50 hidden flex-col gap-2.5 sm:flex">
+        {/* Instagram */}
+        <motion.a
+          href="https://instagram.com/Thai_4646"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 3, type: "spring", stiffness: 200 }}
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          className="flex h-12 w-12 items-center justify-center rounded-2xl shadow-lg transition-shadow"
+          style={{
+            background: "linear-gradient(135deg, #F58529, #DD2A7B, #8134AF, #515BD4)",
+            boxShadow: "0 4px 20px rgba(221, 42, 123, 0.3)",
+          }}
+          aria-label="Instagram 聯繫"
+        >
+          <InstagramIcon className="h-5 w-5 text-white" />
+        </motion.a>
+  
+        {/* Telegram */}
+        <motion.a
+          href="https://t.me/ami28283728"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 3.1, type: "spring", stiffness: 200 }}
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          className="flex h-12 w-12 items-center justify-center rounded-2xl shadow-lg transition-shadow"
+          style={{
+            background: "linear-gradient(135deg, #0088cc, #00aaee)",
+            boxShadow: "0 4px 20px rgba(0, 136, 204, 0.3)",
+          }}
+          aria-label="Telegram 聯繫"
+        >
+          <TelegramIcon className="h-5 w-5 text-white" />
+        </motion.a>
+  
+        {/* WhatsApp */}
+        <motion.a
+          href="https://wa.me/85246476921"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 3.2, type: "spring", stiffness: 200 }}
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          className="animate-pulse-gold flex h-12 w-12 items-center justify-center rounded-2xl shadow-lg transition-shadow"
+          style={{
+            background: "linear-gradient(135deg, #25D366, #128C7E)",
+            boxShadow: "0 4px 20px rgba(37, 211, 102, 0.3)",
+          }}
+          aria-label="WhatsApp 聯繫"
+        >
+          <WhatsAppIcon className="h-5 w-5 text-white" />
+        </motion.a>
+      </div>
+    </>
   );
 }

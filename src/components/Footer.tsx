@@ -52,6 +52,7 @@ export default function Footer() {
       style={{ borderTop: "1px solid #1F1F2E", background: "rgba(8,8,12,0.5)" }}
     >
       {/* Decorative Qimen chart watermark */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/qimen-chart.png"
         alt=""

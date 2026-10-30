@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Phone, Send, Camera } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
@@ -71,7 +72,7 @@ export default function Navbar() {
         {/* Contact Info */}
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Blog link */}
-          <a
+          <Link
             href="/blog"
             className="hidden items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 hover:scale-105 sm:flex sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
             style={{
@@ -81,7 +82,7 @@ export default function Navbar() {
             }}
           >
             博客
-          </a>
+          </Link>
 
           {/* WhatsApp - always visible */}
           <a
@@ -96,8 +97,8 @@ export default function Navbar() {
             }}
           >
             <WhatsAppIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            <span className="hidden min-[400px]:inline">4647 6921</span>
-            <span className="min-[400px]:hidden">
+            <span className="hidden min-[360px]:inline">4647 6921</span>
+            <span className="min-[360px]:hidden">
               <Phone className="h-3 w-3" />
             </span>
           </a>

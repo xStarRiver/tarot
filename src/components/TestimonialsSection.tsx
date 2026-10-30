@@ -37,15 +37,39 @@ export default function TestimonialsSection() {
   const animationRef = useRef<number | null>(null);
   const scrollPosRef = useRef(0);
 
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Touch / drag: pause while the visitor swipes, then resume from wherever
+  // they left the strip instead of snapping back.
+  const pauseForTouch = () => {
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    setIsPaused(true);
+  };
+  const resumeAfterTouch = () => {
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    resumeTimerRef.current = setTimeout(() => setIsPaused(false), 2500);
+  };
+
+  // Close the zoomed screenshot with Escape
+  useEffect(() => {
+    if (!zoomedImage) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setZoomedImage(null);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [zoomedImage]);
+
   // Auto-scroll animation
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    // Pick up from the visitor's own swipe position
+    scrollPosRef.current = container.scrollLeft;
     const scrollSpeed = 0.8; // pixels per frame
 
     const animate = () => {
-      if (!isPaused && container) {
+      if (!isPaused && !zoomedImage && container) {
         scrollPosRef.current += scrollSpeed;
 
         // Reset when scrolled past half (the duplicated set)
@@ -64,7 +88,7 @@ export default function TestimonialsSection() {
     return () => {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
-  }, [isPaused]);
+  }, [isPaused, zoomedImage]);
 
   return (
     <section className="relative py-16 sm:py-20" style={{ backgroundColor: "#08080C" }}>
@@ -148,15 +172,19 @@ export default function TestimonialsSection() {
             style={{ background: "linear-gradient(to left, #08080C, transparent)" }}
           />
 
-          {/* Scrollable container */}
+          {/* Scrollable container — swipeable on touch, auto-scrolls otherwise */}
           <div
             ref={scrollRef}
-            className="flex gap-3 sm:gap-4 overflow-x-hidden py-4 px-4"
+            className="flex gap-3 overflow-x-auto px-4 py-4 [scrollbar-width:none] sm:gap-4 [&::-webkit-scrollbar]:hidden"
             style={{ scrollBehavior: "auto" }}
+            onTouchStart={pauseForTouch}
+            onTouchEnd={resumeAfterTouch}
           >
             {duplicatedImages.map((image, idx) => (
-              <div
+              <button
+                type="button"
                 key={idx}
+                aria-label={`放大查看：${image.alt}`}
                 className="group relative flex-shrink-0 cursor-pointer overflow-hidden rounded-xl transition-transform duration-300 hover:scale-[1.03]"
                 style={{
                   width: "clamp(160px, 38vw, 280px)",
@@ -188,10 +216,12 @@ export default function TestimonialsSection() {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
+
+        <p className="mt-1 text-center text-[11px] text-[#6B6B76] sm:hidden">← 左右滑動 · 點擊放大 →</p>
 
         <p className="mx-auto mt-4 max-w-2xl px-4 text-center text-xs leading-relaxed" style={{ color: "#6B6B76" }}>
           ＊截圖只反映個別客戶的個人經驗，每人情況不同，結果因人而異，並不保證任何特定結果。
@@ -230,6 +260,8 @@ export default function TestimonialsSection() {
           >
             {/* Close button */}
             <button
+              type="button"
+              aria-label="關閉"
               className="absolute top-6 right-6 rounded-full p-2 transition-colors hover:bg-white/10"
               style={{ color: "#F5F5F7" }}
               onClick={() => setZoomedImage(null)}

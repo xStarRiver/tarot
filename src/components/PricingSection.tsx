@@ -5,9 +5,9 @@ import { Check, Star, Sparkles, ArrowRight } from "lucide-react";
 
 const tiers = [
   {
-    name: "網上評測",
+    name: "線上諮詢",
     price: "$1,388",
-    unit: "每次",
+    unit: "小時",
     description: "遠程深度諮詢，隨時隨地",
     highlight: false,
     features: [
@@ -20,16 +20,16 @@ const tiers = [
     cta: "立即預約",
   },
   {
-    name: "面對面深度諮詢 + 佈局",
+    name: "面對面諮詢 + 風水佈局",
     price: "$2,388",
-    unit: "每次",
+    unit: "小時",
     description: "最受歡迎 · 全方位服務",
     highlight: true,
     badge: "推薦",
     features: [
       "1 小時面對面無限提問",
       "個人化風水佈局建議",
-      "贈送開光法物（香水/手鏈）",
+      "獨家送贈泰國開運佛牌（招財・事業）",
       "深度命格分析",
       "30天內免費跟進兩次",
       "專屬 VIP 售後群組",

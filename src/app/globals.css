@@ -47,6 +47,13 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--color-gold-dark); border-radius: 99px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
 
+/* Keyboard focus — visible ring on every link and button */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold-light);
+  outline-offset: 3px;
+}
+
 /* Typography */
 .font-serif { font-family: var(--font-serif); }
 .font-sans { font-family: var(--font-sans); }
