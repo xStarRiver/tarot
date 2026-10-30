@@ -47,8 +47,19 @@ const services = ["愛情占卜", "財運佈局", "生意決策", "擇日擇時"
 
 export default function Footer() {
   return (
-    <footer style={{ borderTop: "1px solid #1F1F2E", background: "rgba(8,8,12,0.5)" }}>
-      <div className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-8 md:px-12 lg:px-16">
+    <footer
+      className="relative overflow-hidden"
+      style={{ borderTop: "1px solid #1F1F2E", background: "rgba(8,8,12,0.5)" }}
+    >
+      {/* Decorative Qimen chart watermark */}
+      <img
+        src="/qimen-chart.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-6 -right-6 w-56 select-none opacity-[0.08] sm:w-72"
+        style={{ filter: "invert(1) hue-rotate(180deg)", mixBlendMode: "screen" }}
+      />
+      <div className="relative mx-auto w-full max-w-6xl px-6 py-16 sm:px-8 md:px-12 lg:px-16">
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <motion.div
