@@ -1,0 +1,1619 @@
+{
+  "meta": {
+    "version": 1,
+    "nodeCount": 63,
+    "edgeCount": 115,
+    "languages": [
+      "javascript",
+      "tsx",
+      "typescript"
+    ],
+    "scopes": [
+      {
+        "prefix": "",
+        "label": "",
+        "markers": [
+          "package.json"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "eslint.config.mjs",
+      "name": "eslint.config.mjs",
+      "kind": "file",
+      "path": "eslint.config.mjs",
+      "span": "L1-L19",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "275a07c13fc7c83a652efcfa9fb6a207c451a2f5088e6793415ce44281285720",
+      "chars": 483,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "next.config.ts",
+      "name": "next.config.ts",
+      "kind": "file",
+      "path": "next.config.ts",
+      "span": "L1-L27",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "750f038db59797e2c7a378ea8418a9f10720b925867fc316befff4c0de711480",
+      "chars": 1112,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "next.config.ts#redirects",
+      "name": "redirects",
+      "kind": "method",
+      "path": "next.config.ts",
+      "span": "L18-L23",
+      "signature": "async redirects()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "6e5a1cf043d828971c2bd55f5042a6e33aa79e712d5db96f93ff0c9fc92aa104",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "postcss.config.mjs",
+      "name": "postcss.config.mjs",
+      "kind": "file",
+      "path": "postcss.config.mjs",
+      "span": "L1-L8",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "7b299d3d3b16699ddda397c0b2373b3af4f25f8fc9ccc9b3d9e64ef083bc1c21",
+      "chars": 101,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/blog/[slug]/page.tsx",
+      "name": "page.tsx",
+      "kind": "file",
+      "path": "src/app/blog/[slug]/page.tsx",
+      "span": "L1-L351",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "f818d2bb502bfc2329043457a9db24beaa7537ccf4dc53d7761f4f794f8dd5dc",
+      "chars": 11998,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/blog/[slug]/page.tsx#BlogData",
+      "name": "BlogData",
+      "kind": "interface",
+      "path": "src/app/blog/[slug]/page.tsx",
+      "span": "L9-L20",
+      "signature": "interface BlogData",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "6f30445beab92d14a7725f456f125d01d5e0f7ea93a360e3ff6e467dfba4b71e",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/blog/[slug]/page.tsx#BlogPostPage",
+      "name": "BlogPostPage",
+      "kind": "function",
+      "path": "src/app/blog/[slug]/page.tsx",
+      "span": "L105-L350",
+      "signature": "async function BlogPostPage({ params, }: { params: Promise<{ slug: string }>; })",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "7c8248e6f022e170f5cbbeea6e3fae25ab697e8a1ab54fac6f2cdb5f645585f4",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/blog/[slug]/page.tsx#decodeHtmlEntities",
+      "name": "decodeHtmlEntities",
+      "kind": "function",
+      "path": "src/app/blog/[slug]/page.tsx",
+      "span": "L31-L38",
+      "signature": "function decodeHtmlEntities(html: string): string",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "a98165f2c0d37be138279cab94e23048c9c335a602646be5757b99710d3cddde",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/blog/[slug]/page.tsx#generateMetadata",
+      "name": "generateMetadata",
+      "kind": "function",
+      "path": "src/app/blog/[slug]/page.tsx",
+      "span": "L71-L103",
+      "signature": "async function generateMetadata({ params, }: { params: Promise<{ slug: string }>; }): Promise<Metadata>",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "0050aef706e91ccc09d52c8e861393643388675481ff7b120674b64d682c5bdc",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/blog/[slug]/page.tsx#generateStaticParams",
+      "name": "generateStaticParams",
+      "kind": "function",
+      "path": "src/app/blog/[slug]/page.tsx",
+      "span": "L67-L69",
+      "signature": "function generateStaticParams()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "e9288b45e1c4f1b392b9c35f263bbbe577dc26ae6f2dec738a464dab552ab1c7",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/blog/[slug]/page.tsx#renderInlineMarkdown",
+      "name": "renderInlineMarkdown",
+      "kind": "function",
+      "path": "src/app/blog/[slug]/page.tsx",
+      "span": "L49-L56",
+      "signature": "function renderInlineMarkdown(html: string): string",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "388d4dd08c401a8fd23909de652ea12c2f7865ed21026341b46ff39bd4c588c9",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/blog/[slug]/page.tsx#stripInlineMarkdown",
+      "name": "stripInlineMarkdown",
+      "kind": "function",
+      "path": "src/app/blog/[slug]/page.tsx",
+      "span": "L63-L65",
+      "signature": "function stripInlineMarkdown(text: string): string",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "f05cb1274fdfcb553054d300ee3a889f909eddb24b8171d0d47eb430125da07a",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/blog/page.tsx",
+      "name": "page.tsx",
+      "kind": "file",
+      "path": "src/app/blog/page.tsx",
+      "span": "L1-L128",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "1ec449a610cc17eeb021096a4d6e3913cffec8c7bb9b228f1cb1a965e1b6687f",
+      "chars": 4416,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/blog/page.tsx#BlogListPage",
+      "name": "BlogListPage",
+      "kind": "function",
+      "path": "src/app/blog/page.tsx",
+      "span": "L14-L127",
+      "signature": "function BlogListPage()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "fd80dfed040bd7a301d5180204007d6f48da8e0831987f521eb2bba131205c8b",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/layout.tsx",
+      "name": "layout.tsx",
+      "kind": "file",
+      "path": "src/app/layout.tsx",
+      "span": "L1-L90",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "4365043d39db0857de6a3b93c3b7cca4d8f34b41f8df8606184919cb31b946a7",
+      "chars": 2720,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/layout.tsx#RootLayout",
+      "name": "RootLayout",
+      "kind": "function",
+      "path": "src/app/layout.tsx",
+      "span": "L29-L88",
+      "signature": "function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>)",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "1af9fca5e6245c282dd659e862e62fd24329db674a3265895e681dda7fdaeca1",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/page.tsx",
+      "name": "page.tsx",
+      "kind": "file",
+      "path": "src/app/page.tsx",
+      "span": "L1-L22",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "0bb64252773422720a524d705c58fdb698e220ba674486fee2d147b4764b3ff8",
+      "chars": 688,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/page.tsx#Home",
+      "name": "Home",
+      "kind": "function",
+      "path": "src/app/page.tsx",
+      "span": "L9-L21",
+      "signature": "function Home()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "be811c7881e01b6c1bcb4d4f469981ba9d7d3b4f4a9a395eef4d754070659386",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/robots.ts",
+      "name": "robots.ts",
+      "kind": "file",
+      "path": "src/app/robots.ts",
+      "span": "L1-L12",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "97dab19484f50e604dd585cfafd734b25586918d695c64de8872c76b6b2fdbe4",
+      "chars": 244,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/robots.ts#robots",
+      "name": "robots",
+      "kind": "function",
+      "path": "src/app/robots.ts",
+      "span": "L3-L11",
+      "signature": "function robots(): MetadataRoute.Robots",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "c55994e90f363c09b42253b4e13e16b8d7d1a60cff46f1a11ac8adc8840da2c7",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/sitemap.ts",
+      "name": "sitemap.ts",
+      "kind": "file",
+      "path": "src/app/sitemap.ts",
+      "span": "L1-L33",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "5827c09fa027e85bbdac81f4a00765dbb722a1848d780dc892ff0cb4ed069d7e",
+      "chars": 872,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/app/sitemap.ts#sitemap",
+      "name": "sitemap",
+      "kind": "function",
+      "path": "src/app/sitemap.ts",
+      "span": "L5-L32",
+      "signature": "function sitemap(): MetadataRoute.Sitemap",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "172838e6968bb0c2d114296dd466482f17dbe4b193b3f94cc401db49ce320a9d",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/CoursesProducts.tsx",
+      "name": "CoursesProducts.tsx",
+      "kind": "file",
+      "path": "src/components/CoursesProducts.tsx",
+      "span": "L1-L311",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "543c5190b616a7b9b11faaf8b2ccfcf9a9cde9cc376cdb088e29154c03788eb7",
+      "chars": 10951,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/CoursesProducts.tsx#CoursesProducts",
+      "name": "CoursesProducts",
+      "kind": "function",
+      "path": "src/components/CoursesProducts.tsx",
+      "span": "L52-L310",
+      "signature": "function CoursesProducts()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "be44f2694df1a3196b631c98f10091745b1c49830f30ff54cb51301cdfe384cd",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/ExpertiseMarquee.tsx",
+      "name": "ExpertiseMarquee.tsx",
+      "kind": "file",
+      "path": "src/components/ExpertiseMarquee.tsx",
+      "span": "L1-L49",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "f73ad51a7f512065272eaae3a4c60026710103741e3cd026ec74594b1b3ef2bb",
+      "chars": 1941,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/ExpertiseMarquee.tsx#ExpertiseMarquee",
+      "name": "ExpertiseMarquee",
+      "kind": "function",
+      "path": "src/components/ExpertiseMarquee.tsx",
+      "span": "L14-L48",
+      "signature": "function ExpertiseMarquee()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "66d0ebbdb0ab29cb1d4c8881af7050afc188feacff16218af4ebc96491c1665b",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/FloatingCards.tsx",
+      "name": "FloatingCards.tsx",
+      "kind": "file",
+      "path": "src/components/FloatingCards.tsx",
+      "span": "L1-L131",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "db09b1a472d0356e83c4899c3738c09654ab5fe0eae4562d018de6d2219a6459",
+      "chars": 4606,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/FloatingCards.tsx#FloatingCards",
+      "name": "FloatingCards",
+      "kind": "function",
+      "path": "src/components/FloatingCards.tsx",
+      "span": "L14-L130",
+      "signature": "function FloatingCards()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "d22ded358e22d9b7413bea400500ffbec1ef12e768064163e89d382b8e6df0f0",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/FloatingCTA.tsx",
+      "name": "FloatingCTA.tsx",
+      "kind": "file",
+      "path": "src/components/FloatingCTA.tsx",
+      "span": "L1-L164",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "8eb391b7e40565be045307cb6b65e6cab956718dcb96d8de939ee988968f0e40",
+      "chars": 6921,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/FloatingCTA.tsx#FloatingCTA",
+      "name": "FloatingCTA",
+      "kind": "function",
+      "path": "src/components/FloatingCTA.tsx",
+      "span": "L96-L163",
+      "signature": "function FloatingCTA()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "4db0abfc0783d2f7c4f9ece521d4d3cddd8be877428477c1504f225d756f15cf",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/FloatingCTA.tsx#InstagramIcon",
+      "name": "InstagramIcon",
+      "kind": "function",
+      "path": "src/components/FloatingCTA.tsx",
+      "span": "L8-L16",
+      "signature": "function InstagramIcon({ className }: { className?: string })",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "0a6bffe3e581eab1401ede0aa09338ec18eb0a74d6adfd72ad61112feaed36fc",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/FloatingCTA.tsx#MobileBookingBar",
+      "name": "MobileBookingBar",
+      "kind": "function",
+      "path": "src/components/FloatingCTA.tsx",
+      "span": "L27-L94",
+      "signature": "function MobileBookingBar()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "c1321fea0f52f7a8f73fbbeb54a194beba48913a420053e892766f6945576965",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/FloatingCTA.tsx#MobileBookingBar.onScroll",
+      "name": "onScroll",
+      "kind": "function",
+      "path": "src/components/FloatingCTA.tsx",
+      "span": "L31-L31",
+      "signature": "onScroll = ()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "0d8fad9ef9c46c024a013a8e7681b2049d529b6498c416b310a2f67c8bf75475",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/FloatingCTA.tsx#TelegramIcon",
+      "name": "TelegramIcon",
+      "kind": "function",
+      "path": "src/components/FloatingCTA.tsx",
+      "span": "L18-L22",
+      "signature": "TelegramIcon = ({ className }: { className?: string })",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "5e80dcebff8a2c5b08b6da5220da5eb628a8f6c046394531258d6fc53cc494b8",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/Footer.tsx",
+      "name": "Footer.tsx",
+      "kind": "file",
+      "path": "src/components/Footer.tsx",
+      "span": "L1-L190",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "4f6b366cd71a146193da414833438ed26413e1457ec7be5026715829770b54a3",
+      "chars": 6375,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/Footer.tsx#Footer",
+      "name": "Footer",
+      "kind": "function",
+      "path": "src/components/Footer.tsx",
+      "span": "L48-L189",
+      "signature": "function Footer()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "d1954a029a4e926e4d352f65c95daf9f73ccb5aa15d93b6186dff425a88ab38f",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/Footer.tsx#YoutubeIcon",
+      "name": "YoutubeIcon",
+      "kind": "function",
+      "path": "src/components/Footer.tsx",
+      "span": "L7-L21",
+      "signature": "YoutubeIcon = ({ className }: { className?: string })",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "cee9d3242a0e4255389a8e25828b244419c1efd4a0320e0e7f890f3e6f5e15fb",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/HeroSection.tsx",
+      "name": "HeroSection.tsx",
+      "kind": "file",
+      "path": "src/components/HeroSection.tsx",
+      "span": "L1-L346",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "cf9e9b7965840df01b48760710bc439ee1ff56d06742fe6eddf57977aae3e5c9",
+      "chars": 14846,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/HeroSection.tsx#AnimatedStat",
+      "name": "AnimatedStat",
+      "kind": "function",
+      "path": "src/components/HeroSection.tsx",
+      "span": "L102-L129",
+      "signature": "function AnimatedStat({ value, label, suffix = \"\" }: { value: number; label: string; suffix?: string })",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "251499dd0e8931e2bf658018ddfe8585ced39552c58b0ad859db33ad342d323b",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/HeroSection.tsx#CardCarousel",
+      "name": "CardCarousel",
+      "kind": "function",
+      "path": "src/components/HeroSection.tsx",
+      "span": "L21-L97",
+      "signature": "function CardCarousel()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "e70b850a805657b2ac139cf06af5b30925b4f35d0b4b5707863da8f399d3e502",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/HeroSection.tsx#CardCarousel.check",
+      "name": "check",
+      "kind": "function",
+      "path": "src/components/HeroSection.tsx",
+      "span": "L26-L26",
+      "signature": "check = ()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "6f505c14ba82f76afd1466bf615878675661535555c3e62f454d6c7d3cb0db3d",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/HeroSection.tsx#HeroSection",
+      "name": "HeroSection",
+      "kind": "function",
+      "path": "src/components/HeroSection.tsx",
+      "span": "L132-L345",
+      "signature": "function HeroSection()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "6affb2b56f31ae6c239ef408fbfe56ca13e9372fd08213142bff294a7714ecfb",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/Navbar.tsx",
+      "name": "Navbar.tsx",
+      "kind": "file",
+      "path": "src/components/Navbar.tsx",
+      "span": "L1-L172",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "daeca52b44a2bf47d92573a0d3d490709c2fc3804c0b3c40957201d53313f76b",
+      "chars": 6423,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/Navbar.tsx#Navbar",
+      "name": "Navbar",
+      "kind": "function",
+      "path": "src/components/Navbar.tsx",
+      "span": "L9-L171",
+      "signature": "function Navbar()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "29ef95c809b5d577f287135a67d1315972ccfcd2a1a209c80aec339e19a80843",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/Navbar.tsx#Navbar.onScroll",
+      "name": "onScroll",
+      "kind": "function",
+      "path": "src/components/Navbar.tsx",
+      "span": "L13-L13",
+      "signature": "onScroll = ()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "330006ec16a66b3380f71555727f3ab943c61c762e42fc3e81c297651a39ee67",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/PricingSection.tsx",
+      "name": "PricingSection.tsx",
+      "kind": "file",
+      "path": "src/components/PricingSection.tsx",
+      "span": "L1-L160",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "81fe6b9232f60f0c2b76c66111ef4a1ab4d430748fda3611e8d6f3e436735c07",
+      "chars": 5294,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/PricingSection.tsx#PricingSection",
+      "name": "PricingSection",
+      "kind": "function",
+      "path": "src/components/PricingSection.tsx",
+      "span": "L41-L159",
+      "signature": "function PricingSection()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "c903dcbac2a33103fe873677bd6bdebc7262d6dbea105a1f51236cfa9eaa689b",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/TestimonialsSection.tsx",
+      "name": "TestimonialsSection.tsx",
+      "kind": "file",
+      "path": "src/components/TestimonialsSection.tsx",
+      "span": "L1-L298",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "c3cd656cf0c7c4345a31672849cf6a7e4b23ed29e39461c5d9e9dbf763fac0aa",
+      "chars": 12194,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/TestimonialsSection.tsx#TestimonialsSection",
+      "name": "TestimonialsSection",
+      "kind": "function",
+      "path": "src/components/TestimonialsSection.tsx",
+      "span": "L33-L297",
+      "signature": "function TestimonialsSection()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "3653f3d2f16a38edd5caa98275073ad30d91bf6f8867390b839e8b348f202863",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/TestimonialsSection.tsx#TestimonialsSection.animate",
+      "name": "animate",
+      "kind": "function",
+      "path": "src/components/TestimonialsSection.tsx",
+      "span": "L71-L84",
+      "signature": "animate = ()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "8a1edd1c2647a120b9f027cbe19b13b850b22256372457c3494a4b81aa971f56",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/TestimonialsSection.tsx#TestimonialsSection.onKey",
+      "name": "onKey",
+      "kind": "function",
+      "path": "src/components/TestimonialsSection.tsx",
+      "span": "L56-L56",
+      "signature": "onKey = (e: KeyboardEvent)",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "dc45a4c0d4411a9ddc873525aa27b73289a3bc266f25481549384e04af11e1c3",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/TestimonialsSection.tsx#TestimonialsSection.pauseForTouch",
+      "name": "pauseForTouch",
+      "kind": "function",
+      "path": "src/components/TestimonialsSection.tsx",
+      "span": "L44-L47",
+      "signature": "pauseForTouch = ()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "3184f0dbeabd107bf7141fc4b26ca77f9f5e38ae7ee1905e0405fe72f663794d",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/TestimonialsSection.tsx#TestimonialsSection.resumeAfterTouch",
+      "name": "resumeAfterTouch",
+      "kind": "function",
+      "path": "src/components/TestimonialsSection.tsx",
+      "span": "L48-L51",
+      "signature": "resumeAfterTouch = ()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "fbca7519a6e7c0ad4b6c311f4729c42df8447cd61de46fb0aec823c586d5b8c8",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/TrackRecord.tsx",
+      "name": "TrackRecord.tsx",
+      "kind": "file",
+      "path": "src/components/TrackRecord.tsx",
+      "span": "L1-L175",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "5d9665edf67d75a4a021342c58c2c123497863f2c0f68ff965831eb90312cbe8",
+      "chars": 6038,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/TrackRecord.tsx#TrackRecord",
+      "name": "TrackRecord",
+      "kind": "function",
+      "path": "src/components/TrackRecord.tsx",
+      "span": "L45-L174",
+      "signature": "function TrackRecord()",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "13aa0825bbfba8e73d2430a1009ded66f05ca7bb036331695ba8c3ce99190939",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/WhatsAppIcon.tsx",
+      "name": "WhatsAppIcon.tsx",
+      "kind": "file",
+      "path": "src/components/WhatsAppIcon.tsx",
+      "span": "L1-L8",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "580196556ca357975dbfcae1d9b1be9df9ebbac29ea5e2900021fcab571e3563",
+      "chars": 1307,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/components/WhatsAppIcon.tsx#WhatsAppIcon",
+      "name": "WhatsAppIcon",
+      "kind": "function",
+      "path": "src/components/WhatsAppIcon.tsx",
+      "span": "L1-L7",
+      "signature": "function WhatsAppIcon({ className = \"h-4 w-4\" }: { className?: string })",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "f42c4a4e0957be45da9e6a6da1bb4992f35b82394aac5e62954d499508844e65",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/instrumentation-client.ts",
+      "name": "instrumentation-client.ts",
+      "kind": "file",
+      "path": "src/instrumentation-client.ts",
+      "span": "L1-L51",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "00adb9f4ed4fa424bfdc9975791d5ac11cc8e52704a4de4e7b9c4bd096c54380",
+      "chars": 2128,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/instrumentation-client.ts#landingSource",
+      "name": "landingSource",
+      "kind": "function",
+      "path": "src/instrumentation-client.ts",
+      "span": "L14-L20",
+      "signature": "function landingSource(): string | null",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "7596234e7afb0869b82ce095c0440c627c2c69fc6665528569bf907968e695bd",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/instrumentation-client.ts#visitSource",
+      "name": "visitSource",
+      "kind": "function",
+      "path": "src/instrumentation-client.ts",
+      "span": "L22-L31",
+      "signature": "function visitSource(): string",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "dc99ee853ecb37d4b0e355beb4398898935b3947c8be8e483c54183a0843bcdb",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/lib/slugs.ts",
+      "name": "slugs.ts",
+      "kind": "file",
+      "path": "src/lib/slugs.ts",
+      "span": "L1-L20",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "767db4bf91a75da1b70d6fc4eb1236dbc2296685728f1714065f718317dbdf04",
+      "chars": 694,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/lib/slugs.ts#decodeSlug",
+      "name": "decodeSlug",
+      "kind": "function",
+      "path": "src/lib/slugs.ts",
+      "span": "L7-L14",
+      "signature": "function decodeSlug(param: string): string",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "5f6bb1b428be36b39c67977d7b9f2fcdf3f69f5f0a8ff185848f8c6651e79f00",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "src/lib/slugs.ts#encodeSlug",
+      "name": "encodeSlug",
+      "kind": "function",
+      "path": "src/lib/slugs.ts",
+      "span": "L17-L19",
+      "signature": "function encodeSlug(slug: string): string",
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "b98975235a5a58cb64ba3519308c128ae8a2098ebee631efd428f8907e7d6d3d",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "eslint.config.mjs",
+      "target": "eslint-config-next/core-web-vitals",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "eslint.config.mjs",
+      "target": "eslint-config-next/typescript",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "eslint.config.mjs",
+      "target": "eslint/config",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "next.config.ts",
+      "target": "next.config.ts#redirects",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "next.config.ts",
+      "target": "next",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "src/app/blog/[slug]/page.tsx#BlogData",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "src/app/blog/[slug]/page.tsx#BlogPostPage",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "src/app/blog/[slug]/page.tsx#decodeHtmlEntities",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "src/app/blog/[slug]/page.tsx#generateMetadata",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "src/app/blog/[slug]/page.tsx#generateStaticParams",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "src/app/blog/[slug]/page.tsx#renderInlineMarkdown",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "src/app/blog/[slug]/page.tsx#stripInlineMarkdown",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "@/components/Footer",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "@/components/Navbar",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "@/data/blogs.json",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "@/lib/slugs",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "next",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "next/link",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx",
+      "target": "next/navigation",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx#BlogPostPage",
+      "target": "src/app/blog/[slug]/page.tsx#decodeHtmlEntities",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx#BlogPostPage",
+      "target": "src/app/blog/[slug]/page.tsx#renderInlineMarkdown",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx#BlogPostPage",
+      "target": "src/app/blog/[slug]/page.tsx#stripInlineMarkdown",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx#BlogPostPage",
+      "target": "src/lib/slugs.ts#decodeSlug",
+      "relation": "calls",
+      "confidence": "inferred"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx#BlogPostPage",
+      "target": "src/lib/slugs.ts#encodeSlug",
+      "relation": "calls",
+      "confidence": "inferred"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx#generateMetadata",
+      "target": "src/lib/slugs.ts#decodeSlug",
+      "relation": "calls",
+      "confidence": "inferred"
+    },
+    {
+      "source": "src/app/blog/[slug]/page.tsx#generateMetadata",
+      "target": "src/lib/slugs.ts#encodeSlug",
+      "relation": "calls",
+      "confidence": "inferred"
+    },
+    {
+      "source": "src/app/blog/page.tsx",
+      "target": "src/app/blog/page.tsx#BlogListPage",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/page.tsx",
+      "target": "@/components/Footer",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/page.tsx",
+      "target": "@/components/Navbar",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/page.tsx",
+      "target": "@/data/blogs.json",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/page.tsx",
+      "target": "@/lib/slugs",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/page.tsx",
+      "target": "next",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/page.tsx",
+      "target": "next/link",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/blog/page.tsx#BlogListPage",
+      "target": "src/lib/slugs.ts#encodeSlug",
+      "relation": "calls",
+      "confidence": "inferred"
+    },
+    {
+      "source": "src/app/layout.tsx",
+      "target": "src/app/layout.tsx#RootLayout",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/layout.tsx",
+      "target": "./globals.css",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/layout.tsx",
+      "target": "@/components/FloatingCTA",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/layout.tsx",
+      "target": "next",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/layout.tsx",
+      "target": "next/script",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "target": "src/app/page.tsx#Home",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "target": "@/components/CoursesProducts",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "target": "@/components/Footer",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "target": "@/components/HeroSection",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "target": "@/components/Navbar",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "target": "@/components/PricingSection",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "target": "@/components/TestimonialsSection",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "target": "@/components/TrackRecord",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/robots.ts",
+      "target": "src/app/robots.ts#robots",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/robots.ts",
+      "target": "next",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/sitemap.ts",
+      "target": "src/app/sitemap.ts#sitemap",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/sitemap.ts",
+      "target": "@/data/blogs.json",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/sitemap.ts",
+      "target": "@/lib/slugs",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/sitemap.ts",
+      "target": "next",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/app/sitemap.ts#sitemap",
+      "target": "src/lib/slugs.ts#encodeSlug",
+      "relation": "calls",
+      "confidence": "inferred"
+    },
+    {
+      "source": "src/components/CoursesProducts.tsx",
+      "target": "src/components/CoursesProducts.tsx#CoursesProducts",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/CoursesProducts.tsx",
+      "target": "framer-motion",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/CoursesProducts.tsx",
+      "target": "lucide-react",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/CoursesProducts.tsx",
+      "target": "src/components/WhatsAppIcon.tsx",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/ExpertiseMarquee.tsx",
+      "target": "src/components/ExpertiseMarquee.tsx#ExpertiseMarquee",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/ExpertiseMarquee.tsx",
+      "target": "framer-motion",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCards.tsx",
+      "target": "src/components/FloatingCards.tsx#FloatingCards",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCards.tsx",
+      "target": "framer-motion",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCards.tsx",
+      "target": "next/image",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCTA.tsx",
+      "target": "src/components/FloatingCTA.tsx#FloatingCTA",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCTA.tsx",
+      "target": "src/components/FloatingCTA.tsx#InstagramIcon",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCTA.tsx",
+      "target": "src/components/FloatingCTA.tsx#MobileBookingBar",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCTA.tsx",
+      "target": "src/components/FloatingCTA.tsx#TelegramIcon",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCTA.tsx",
+      "target": "framer-motion",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCTA.tsx",
+      "target": "next/link",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCTA.tsx",
+      "target": "react",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCTA.tsx",
+      "target": "src/components/WhatsAppIcon.tsx",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCTA.tsx#MobileBookingBar",
+      "target": "src/components/FloatingCTA.tsx#MobileBookingBar.onScroll",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/FloatingCTA.tsx#MobileBookingBar",
+      "target": "src/components/FloatingCTA.tsx#MobileBookingBar.onScroll",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Footer.tsx",
+      "target": "src/components/Footer.tsx#Footer",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Footer.tsx",
+      "target": "src/components/Footer.tsx#YoutubeIcon",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Footer.tsx",
+      "target": "framer-motion",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Footer.tsx",
+      "target": "lucide-react",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Footer.tsx",
+      "target": "src/components/WhatsAppIcon.tsx",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Footer.tsx",
+      "target": "src/components/WhatsAppIcon.tsx#WhatsAppIcon",
+      "relation": "references",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/HeroSection.tsx",
+      "target": "src/components/HeroSection.tsx#AnimatedStat",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/HeroSection.tsx",
+      "target": "src/components/HeroSection.tsx#CardCarousel",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/HeroSection.tsx",
+      "target": "src/components/HeroSection.tsx#HeroSection",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/HeroSection.tsx",
+      "target": "framer-motion",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/HeroSection.tsx",
+      "target": "react",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/HeroSection.tsx",
+      "target": "src/components/WhatsAppIcon.tsx",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/HeroSection.tsx#CardCarousel",
+      "target": "src/components/HeroSection.tsx#CardCarousel.check",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/HeroSection.tsx#CardCarousel",
+      "target": "src/components/HeroSection.tsx#CardCarousel.check",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Navbar.tsx",
+      "target": "src/components/Navbar.tsx#Navbar",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Navbar.tsx",
+      "target": "framer-motion",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Navbar.tsx",
+      "target": "lucide-react",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Navbar.tsx",
+      "target": "next/link",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Navbar.tsx",
+      "target": "react",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Navbar.tsx",
+      "target": "src/components/WhatsAppIcon.tsx",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/Navbar.tsx#Navbar",
+      "target": "src/components/Navbar.tsx#Navbar.onScroll",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/PricingSection.tsx",
+      "target": "src/components/PricingSection.tsx#PricingSection",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/PricingSection.tsx",
+      "target": "framer-motion",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/PricingSection.tsx",
+      "target": "lucide-react",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/TestimonialsSection.tsx",
+      "target": "src/components/TestimonialsSection.tsx#TestimonialsSection",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/TestimonialsSection.tsx",
+      "target": "framer-motion",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/TestimonialsSection.tsx",
+      "target": "lucide-react",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/TestimonialsSection.tsx",
+      "target": "react",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/TestimonialsSection.tsx#TestimonialsSection",
+      "target": "src/components/TestimonialsSection.tsx#TestimonialsSection.animate",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/TestimonialsSection.tsx#TestimonialsSection",
+      "target": "src/components/TestimonialsSection.tsx#TestimonialsSection.onKey",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/TestimonialsSection.tsx#TestimonialsSection",
+      "target": "src/components/TestimonialsSection.tsx#TestimonialsSection.pauseForTouch",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/TestimonialsSection.tsx#TestimonialsSection",
+      "target": "src/components/TestimonialsSection.tsx#TestimonialsSection.resumeAfterTouch",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/TrackRecord.tsx",
+      "target": "src/components/TrackRecord.tsx#TrackRecord",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/TrackRecord.tsx",
+      "target": "framer-motion",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/TrackRecord.tsx",
+      "target": "src/components/WhatsAppIcon.tsx",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/components/WhatsAppIcon.tsx",
+      "target": "src/components/WhatsAppIcon.tsx#WhatsAppIcon",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/instrumentation-client.ts",
+      "target": "src/instrumentation-client.ts#visitSource",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/instrumentation-client.ts",
+      "target": "src/instrumentation-client.ts#landingSource",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/instrumentation-client.ts",
+      "target": "src/instrumentation-client.ts#visitSource",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/instrumentation-client.ts#visitSource",
+      "target": "src/instrumentation-client.ts#landingSource",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/lib/slugs.ts",
+      "target": "src/lib/slugs.ts#decodeSlug",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "src/lib/slugs.ts",
+      "target": "src/lib/slugs.ts#encodeSlug",
+      "relation": "contains",
+      "confidence": "extracted"
+    }
+  ]
+}
