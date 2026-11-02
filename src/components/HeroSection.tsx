@@ -191,7 +191,7 @@ export default function HeroSection() {
               filter: "drop-shadow(0 0 20px rgba(201,168,76,0.3))",
             }}
           >
-            精準預測
+            時機分析
           </span>
           <span
             className="inline-block ml-3"
@@ -268,7 +268,7 @@ export default function HeroSection() {
                 color: "#E8D48B",
               }}
             >
-              🎁 面對面獨家送贈：泰國開運佛牌（招財・事業）
+              🎁 面對面獨家送贈：泰國開運佛牌
             </p>
           </motion.div>
   
@@ -334,8 +334,6 @@ export default function HeroSection() {
           className="mt-5 hidden items-center gap-3 sm:mt-6 sm:gap-8 md:gap-12 [@media(max-width:639px)_and_(min-height:820px)]:flex [@media(min-width:1024px)_and_(min-height:860px)]:flex lg:mt-8"
         >
           <AnimatedStat value={10000} suffix="+" label="服務客戶" />
-          <div className="h-8 w-px" style={{ background: "linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent)" }} />
-          <AnimatedStat value={10} suffix="年+" label="從業經驗" />
           <div className="h-8 w-px" style={{ background: "linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent)" }} />
           <AnimatedStat value={7} suffix="天" label="免費跟進" />
         </motion.div>

@@ -65,7 +65,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               url: "https://www.tarotinft.net",
               logo: "https://www.tarotinft.net/logo.png",
               description:
-                "奇門遁甲預測、風水佈局、開運法物及一對一課程。精準預測，無需八字。",
+                "奇門遁甲預測、風水佈局、開運法物及一對一課程。一對一分析，無需八字。",
               sameAs: [
                 "https://www.instagram.com/Thai_4646",
                 "https://www.youtube.com/@Tarot_fox",
