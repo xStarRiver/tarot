@@ -22,6 +22,44 @@ interface BlogData {
 const blogsData = blogs as BlogData[];
 
 /**
+ * 相關文章: the 3 posts that share the most distinctive Chinese wording
+ * (IDF-weighted bigram cosine on title + subtitle + meta description), so
+ * every post links to topical neighbours instead of the same 3 newest posts.
+ */
+const bigramsOf = (b: BlogData) => {
+  const text = `${b.title}${b.subtitle}${b.metaDescription}`.replace(/[^\u4e00-\u9fff]/g, "");
+  const grams = new Set<string>();
+  for (let i = 0; i < text.length - 1; i++) grams.add(text.slice(i, i + 2));
+  return grams;
+};
+const postGrams = new Map(blogsData.map((b) => [b.slug, bigramsOf(b)]));
+const docFreq = new Map<string, number>();
+for (const grams of postGrams.values())
+  for (const g of grams) docFreq.set(g, (docFreq.get(g) ?? 0) + 1);
+const weight = (g: string) => Math.log(blogsData.length / (docFreq.get(g) ?? 1)) ** 2;
+const postNorm = new Map(
+  [...postGrams].map(([slug, grams]) => [
+    slug,
+    Math.sqrt([...grams].reduce((sum, g) => sum + weight(g), 0)) || 1,
+  ])
+);
+
+function relatedPosts(blog: BlogData, count = 3): BlogData[] {
+  const mine = postGrams.get(blog.slug) ?? new Set<string>();
+  const myNorm = postNorm.get(blog.slug) ?? 1;
+  return blogsData
+    .filter((b) => b.slug !== blog.slug)
+    .map((b) => {
+      let dot = 0;
+      for (const g of postGrams.get(b.slug) ?? []) if (mine.has(g)) dot += weight(g);
+      return { b, score: dot / ((postNorm.get(b.slug) ?? 1) * myNorm) };
+    })
+    .sort((x, y) => y.score - x.score || y.b.date.localeCompare(x.b.date))
+    .slice(0, count)
+    .map((x) => x.b);
+}
+
+/**
  * Blog content is injected via dangerouslySetInnerHTML. Content created
  * outside this repo occasionally ships HTML-entity-escaped anchors
  * (e.g. &lt;a href="..."&gt;), which would render as visible "<a ...>"
@@ -112,7 +150,7 @@ export default async function BlogPostPage({
   if (!blog) notFound();
 
   const postUrl = `https://www.tarotinft.net/blog/${encodeSlug(blog.slug)}`;
-  const related = blogsData.filter((b) => b.slug !== blog.slug).slice(0, 3);
+  const related = relatedPosts(blog);
 
   const blogPostingJsonLd = {
     "@context": "https://schema.org",
