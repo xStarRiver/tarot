@@ -5,26 +5,31 @@ import Footer from "@/components/Footer";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 
 // Landing page for the Google Ads "感情・塔羅" asset group (younger, affluent women).
-// Keep it free of testimonial screenshots, case stories and outcome claims: the ad
-// account was limited for Misrepresentation in 2026-09/10 because of such content.
+// Policy: the ad account was limited for Misrepresentation in 2026-09/10. No outcome,
+// accuracy, years-of-experience, money or health claims — in text OR inside screenshots.
+// The only screenshots are three claim-free lifestyle stories from the master's Instagram
+// (homepage testimonials 8 / 10 / 23); re-check any new one before adding it.
 
 const WHATSAPP = "https://wa.me/85246476921";
 const TELEGRAM = "https://t.me/ami28283728";
 const SERIF = { fontFamily: "'Noto Serif TC', serif" };
+const CHAMPAGNE = "#E8D4A8";
+const BLUSH = "#E9B8C4";
+const LINE = "1px solid rgba(232,212,168,0.16)";
 const GOLD_TEXT = {
-  background: "linear-gradient(135deg, #F6D365 0%, #C9A84C 50%, #F6D365 100%)",
+  background: "linear-gradient(120deg, #F3E3BC 0%, #C9A84C 45%, #F3E3BC 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
 } as const;
 
 export const metadata: Metadata = {
-  title: "感情・塔羅占卜｜女師傅一對一私密解讀 - Tarot INFT",
+  title: "感情・塔羅私人解讀｜女師傅一對一 - Tarot INFT",
   description:
-    "香港塔羅占卜及感情問事：對方心意、桃花姻緣、復合時機、結婚擇日。女師傅一對一私密解讀，唔使提供出生時辰，內容保密。網上評測 $1,388 起，WhatsApp 預約。",
+    "香港塔羅占卜及感情問事：對方心意、桃花姻緣、復合時機、結婚擇日。女師傅一對一私人解讀，唔使提供出生時辰，內容保密。網上評測 $1,388 起，WhatsApp 預約。",
   alternates: { canonical: "https://www.tarotinft.net/love" },
   openGraph: {
-    title: "感情・塔羅占卜｜女師傅一對一私密解讀",
-    description: "對方心意、桃花姻緣、復合時機、結婚擇日。唔使提供出生時辰，一對一私密諮詢。",
+    title: "感情・塔羅私人解讀｜女師傅一對一",
+    description: "對方心意、桃花姻緣、復合時機、結婚擇日。唔使提供出生時辰，一對一私人諮詢。",
     type: "website",
     url: "https://www.tarotinft.net/love",
   },
@@ -32,40 +37,46 @@ export const metadata: Metadata = {
 
 const questions = ["佢對我係咪認真？", "下一段桃花幾時出現？", "呢段感情值唔值得繼續？", "幾時結婚最合適？"];
 
+const trust = ["女師傅一對一", "唔使出生時辰", "網上／面對面", "內容保密"];
+
 const services = [
   {
+    no: "01",
     title: "對方心意・感情走向",
-    text: "塔羅逐張解讀，睇清楚對方諗法同呢段關係嘅下一步。",
+    text: "塔羅逐張解讀，睇清楚對方諗法、你哋而家嘅狀態，同呢段關係嘅下一步。",
     img: "/images/blog/tarot-cards-intro-2026/inline-02.webp",
   },
   {
+    no: "02",
     title: "桃花・姻緣時機",
-    text: "正緣幾時出現、點樣把握，用奇門遁甲分析時機。",
+    text: "正緣幾時出現、喺邊類場合遇到、點樣把握，用奇門遁甲分析時機同方向。",
     img: "/images/blog/attract-love-layout-2026/inline-01.webp",
   },
   {
+    no: "03",
     title: "復合・聯絡時機",
     text: "分析雙方而家嘅狀態，揀合適時間主動，定係先等一等。",
     img: "/images/blog/breakup-reunion-2026/inline-01.webp",
   },
   {
+    no: "04",
     title: "結婚擇日",
-    text: "註冊、過大禮、擺酒日子，配合雙方情況擇日擇時。",
+    text: "註冊、過大禮、擺酒日子，配合雙方情況擇日擇時，面對面可以一齊傾。",
     img: "/images/blog/attract-love-layout-2026/inline-02.webp",
   },
 ];
 
-const reasons = [
-  { title: "女師傅一對一", text: "感情嘅事可以放心慢慢講，唔使同其他人排隊。" },
-  { title: "唔使出生時辰", text: "奇門遁甲以你提問嘅時間起盤，唔記得時辰都可以問。" },
-  { title: "塔羅＋奇門", text: "塔羅睇心意同狀態，奇門睇時機同方向。" },
-  { title: "網上或面對面", text: "WhatsApp／Telegram 文字、語音都得，唔使特登出門。" },
+const included = [
+  "1 小時內任問，感情、事業、人際都可以",
+  "WhatsApp／Telegram 文字、語音、圖片都得",
+  "個人化建議，唔係一般星座運程",
+  "網上評測 7 日內免費跟進一次",
 ];
 
-const steps = [
-  "WhatsApp 或 Telegram 講低想問嘅事",
-  "揀網上或者面對面，約好時間",
-  "一對一解讀，1 小時內任問，之後有免費跟進",
+const moments = [
+  { src: "/images/testimonials/8.jpg", caption: "陪相識三年嘅客人睇新居" },
+  { src: "/images/testimonials/10.jpg", caption: "客人開公司，順便一齊揀車" },
+  { src: "/images/testimonials/23.jpg", caption: "上門睇大埔比華利山屋企風水" },
 ];
 
 const faqs = [
@@ -100,14 +111,34 @@ const reading = [
   { slug: "private-divination-privacy", title: "一對一占卜：私隱、保密與跟進的5個問題" },
 ];
 
-function ContactButtons() {
+function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-      <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn-primary">
+    <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.35em]" style={{ color: BLUSH }}>
+      {children}
+    </p>
+  );
+}
+
+function ContactButtons({ center = false }: { center?: boolean }) {
+  return (
+    <div className={`flex flex-wrap items-center gap-3 ${center ? "justify-center" : "justify-center lg:justify-start"}`}>
+      <a
+        href={WHATSAPP}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-transform duration-300 hover:scale-[1.03]"
+        style={{ background: "linear-gradient(135deg, #C9A84C, #F3E3BC, #C9A84C)", color: "#1A1020", boxShadow: "0 8px 30px rgba(201,168,76,0.25)" }}
+      >
         <WhatsAppIcon className="h-4 w-4 shrink-0" />
         WhatsApp 預約
       </a>
-      <a href={TELEGRAM} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+      <a
+        href={TELEGRAM}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center rounded-full px-7 py-3.5 text-sm font-semibold transition-colors duration-300 hover:bg-white/5"
+        style={{ border: LINE, color: CHAMPAGNE }}
+      >
         Telegram 預約
       </a>
     </div>
@@ -116,75 +147,112 @@ function ContactButtons() {
 
 export default function LovePage() {
   return (
-    <main className="min-h-screen overflow-hidden text-[#F5F5F7]" style={{ backgroundColor: "#08080C" }}>
+    <main
+      className="min-h-screen overflow-hidden text-[#F4EEF2]"
+      style={{ background: "radial-gradient(ellipse at top, #1C0F1F 0%, #0B0710 55%, #08060B 100%)" }}
+    >
       <Navbar />
 
       {/* Hero */}
-      <section className="relative px-6 pb-16 pt-28 sm:px-8 md:pt-32 lg:px-16">
+      <section className="relative px-6 pb-20 pt-28 sm:px-8 md:pt-36 lg:px-16">
         <div
-          className="pointer-events-none absolute right-0 top-10 h-[480px] w-[480px] rounded-full blur-[120px]"
-          style={{ background: "rgba(236,72,153,0.10)" }}
+          className="pointer-events-none absolute -right-24 top-20 h-[520px] w-[520px] rounded-full blur-[140px]"
+          style={{ background: "rgba(233,184,196,0.10)" }}
         />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
+        <div className="relative mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="text-center lg:text-left">
-            <div className="badge badge-gold mx-auto mb-5 lg:mx-0">感情・塔羅占卜</div>
-            <h1 className="text-4xl font-bold leading-tight sm:text-5xl md:text-6xl" style={SERIF}>
-              <span style={GOLD_TEXT}>感情嘅事</span>
+            <Eyebrow>Private Love Reading</Eyebrow>
+            <h1 className="text-5xl font-semibold leading-[1.15] sm:text-6xl md:text-7xl" style={{ ...SERIF, letterSpacing: "0.04em" }}>
+              <span style={GOLD_TEXT}>感情・塔羅</span>
               <br />
-              一對一慢慢傾
+              <span className="text-3xl font-normal sm:text-4xl md:text-5xl" style={{ color: "#F4EEF2" }}>
+                私人一對一解讀
+              </span>
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-[#C4C4CE] sm:text-lg" style={SERIF}>
-              女師傅私密解讀・唔使提供出生時辰
+            <p className="mx-auto mt-6 max-w-md text-base leading-loose text-[#CFC4CC] lg:mx-0" style={SERIF}>
+              塔羅睇心意，奇門遁甲睇時機。
               <br />
-              塔羅睇心意，奇門遁甲睇時機
+              由女師傅親自解讀，唔使提供出生時辰。
             </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-2 lg:justify-start">
+            <div className="mt-7 flex flex-wrap justify-center gap-2 lg:justify-start">
               {questions.map((q) => (
                 <span
                   key={q}
-                  className="rounded-full px-3.5 py-1.5 text-sm text-[#E8D48B]"
-                  style={{ border: "1px solid rgba(201,168,76,0.3)", background: "rgba(201,168,76,0.06)" }}
+                  className="rounded-full px-4 py-1.5 text-sm"
+                  style={{ ...SERIF, border: LINE, background: "rgba(232,212,168,0.04)", color: CHAMPAGNE }}
                 >
-                  {q}
+                  「{q}」
                 </span>
               ))}
             </div>
-            <p className="mt-6 text-sm text-[#A1A1AA]">
-              線上諮詢 <span className="font-semibold text-[#F5F5F7]">$1,388</span>／小時 · 面對面諮詢{" "}
-              <span className="font-semibold text-[#E8D48B]">$2,388</span>／小時
-            </p>
-            <div className="mt-6">
+            <div className="mt-9">
               <ContactButtons />
             </div>
+            <p className="mt-5 text-sm text-[#A79BA4]">
+              網上評測 <span className="font-semibold text-[#F4EEF2]">$1,388</span>／小時 · 面對面連佈局{" "}
+              <span className="font-semibold" style={{ color: CHAMPAGNE }}>
+                $2,388
+              </span>
+              ／小時
+            </p>
           </div>
-          <div className="mx-auto w-full max-w-md">
+
+          {/* Arch-framed image */}
+          <div className="relative mx-auto w-full max-w-[380px]">
+            <div
+              className="absolute -inset-3 rounded-t-[999px] rounded-b-[28px]"
+              style={{ border: "1px solid rgba(232,212,168,0.22)" }}
+            />
             <img
               src="/images/blog/tarot-cards-intro-2026/inline-02.webp"
               alt="塔羅占卜：一張塔羅牌喺牌陣中被翻開"
               width={1024}
               height={1024}
-              className="w-full rounded-3xl"
-              style={{ border: "1px solid rgba(201,168,76,0.25)", boxShadow: "0 20px 60px rgba(0,0,0,0.5)" }}
+              className="relative aspect-[4/5] w-full rounded-t-[999px] rounded-b-[24px] object-cover"
+              style={{ boxShadow: "0 30px 80px rgba(0,0,0,0.55)" }}
             />
           </div>
         </div>
+
+        {/* Trust row */}
+        <div className="relative mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-2xl sm:grid-cols-4" style={{ border: LINE }}>
+          {trust.map((t) => (
+            <div key={t} className="px-4 py-4 text-center text-sm" style={{ ...SERIF, background: "rgba(255,255,255,0.02)", color: CHAMPAGNE }}>
+              {t}
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* What you can ask */}
-      <section className="px-6 py-16 sm:px-8 lg:px-16">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mb-10 text-center text-3xl font-bold sm:text-4xl text-gradient-gold" style={SERIF}>
-            可以問乜嘢
-          </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((s) => (
-              <div key={s.title} className="card-glass overflow-hidden">
-                <img src={s.img} alt={s.title} width={1024} height={1024} className="aspect-[16/9] w-full object-cover sm:aspect-square" />
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold" style={SERIF}>
+      {/* Services — editorial rows */}
+      <section className="px-6 py-20 sm:px-8 lg:px-16">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-14 text-center">
+            <Eyebrow>What you can ask</Eyebrow>
+            <h2 className="text-3xl font-semibold sm:text-4xl" style={SERIF}>
+              可以問乜嘢
+            </h2>
+          </div>
+          <div className="space-y-14">
+            {services.map((s, i) => (
+              <div key={s.title} className={`grid items-center gap-8 md:grid-cols-2 md:gap-14 ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}>
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  width={1024}
+                  height={1024}
+                  className="aspect-[16/10] w-full rounded-3xl object-cover md:aspect-[5/4]"
+                  style={{ border: LINE }}
+                />
+                <div className="text-center md:text-left">
+                  <p className="text-sm tracking-[0.3em]" style={{ color: BLUSH }}>
+                    {s.no}
+                  </p>
+                  <h3 className="mt-2 text-2xl font-semibold" style={SERIF}>
                     {s.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#A1A1AA]">{s.text}</p>
+                  <div className="mx-auto my-4 h-px w-12 md:mx-0" style={{ background: "rgba(232,212,168,0.4)" }} />
+                  <p className="leading-loose text-[#B9ADB6]">{s.text}</p>
                 </div>
               </div>
             ))}
@@ -192,72 +260,120 @@ export default function LovePage() {
         </div>
       </section>
 
-      {/* Why */}
-      <section className="px-6 py-16 sm:px-8 lg:px-16">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="mb-10 text-center text-3xl font-bold sm:text-4xl text-gradient-gold" style={SERIF}>
-            私密、一對一
-          </h2>
-          <div className="grid gap-5 sm:grid-cols-2">
-            {reasons.map((r) => (
-              <div key={r.title} className="card-glass p-6">
-                <h3 className="text-lg font-semibold text-[#E8D48B]" style={SERIF}>
-                  {r.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#A1A1AA]">{r.text}</p>
-              </div>
-            ))}
+      {/* What a reading includes + privacy */}
+      <section className="px-6 py-20 sm:px-8 lg:px-16">
+        <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
+          <div className="rounded-3xl p-8" style={{ border: LINE, background: "rgba(255,255,255,0.02)" }}>
+            <Eyebrow>Each reading</Eyebrow>
+            <h2 className="mb-6 text-2xl font-semibold" style={SERIF}>
+              一次解讀包括
+            </h2>
+            <ul className="space-y-4">
+              {included.map((item) => (
+                <li key={item} className="flex gap-3 text-[#CFC4CC]">
+                  <span style={{ color: CHAMPAGNE }}>✦</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ol className="mx-auto mt-10 max-w-2xl space-y-3">
-            {steps.map((step, i) => (
-              <li key={step} className="flex items-start gap-4 text-[#C4C4CE]">
-                <span
-                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold text-[#08080C]"
-                  style={{ background: "linear-gradient(135deg, #C9A84C, #E8D48B)" }}
-                >
-                  {i + 1}
-                </span>
-                <span className="pt-0.5">{step}</span>
-              </li>
-            ))}
-          </ol>
+          <div
+            className="rounded-3xl p-8"
+            style={{ border: LINE, background: "linear-gradient(160deg, rgba(233,184,196,0.08), rgba(255,255,255,0.02))" }}
+          >
+            <Eyebrow>Privacy</Eyebrow>
+            <h2 className="mb-6 text-2xl font-semibold" style={SERIF}>
+              私人、保密
+            </h2>
+            <p className="leading-loose text-[#CFC4CC]">
+              每次都係一對一進行，唔使同其他人排隊，亦唔使提供出生時辰。感情嘅事可以慢慢講，諮詢內容保密。
+            </p>
+            <ol className="mt-6 space-y-3 text-sm text-[#B9ADB6]">
+              <li>1　WhatsApp 或 Telegram 講低想問嘅事</li>
+              <li>2　揀網上或者面對面，約好時間</li>
+              <li>3　一對一解讀，之後有免費跟進</li>
+            </ol>
+          </div>
         </div>
+      </section>
+
+      {/* Client moments — claim-free lifestyle stories only */}
+      <section className="py-20">
+        <div className="mx-auto max-w-5xl px-6 text-center sm:px-8">
+          <Eyebrow>Moments</Eyebrow>
+          <h2 className="text-3xl font-semibold sm:text-4xl" style={SERIF}>
+            客人日常
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[#A79BA4]">
+            面對面諮詢唔止喺工作室：陪客人睇新居、揀車、上門睇屋企風水。
+          </p>
+        </div>
+        <div className="mx-auto mt-10 flex max-w-5xl snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-8">
+          {moments.map((m) => (
+            <figure key={m.src} className="w-[70%] shrink-0 snap-center sm:w-auto">
+              <img
+                src={m.src}
+                alt={`客人日常：${m.caption}`}
+                width={575}
+                height={1024}
+                className="w-full rounded-[28px]"
+                style={{ border: LINE, boxShadow: "0 20px 50px rgba(0,0,0,0.45)" }}
+              />
+              <figcaption className="mt-3 text-center text-sm" style={{ ...SERIF, color: CHAMPAGNE }}>
+                {m.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="mx-auto mt-4 max-w-3xl px-6 text-center text-xs leading-relaxed text-[#6F6470]">
+          ＊截圖來自師傅 Instagram，只反映個別客人嘅生活片段，每人情況不同，結果因人而異，並不保證任何特定結果。
+        </p>
       </section>
 
       <PricingSection />
 
       {/* FAQ */}
-      <section className="px-6 py-16 sm:px-8 lg:px-16">
+      <section className="px-6 py-20 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-3xl">
-          <h2 className="mb-8 text-center text-3xl font-bold sm:text-4xl text-gradient-gold" style={SERIF}>
-            常見問題
-          </h2>
-          <div className="space-y-4">
+          <div className="mb-10 text-center">
+            <Eyebrow>FAQ</Eyebrow>
+            <h2 className="text-3xl font-semibold sm:text-4xl" style={SERIF}>
+              常見問題
+            </h2>
+          </div>
+          <div className="divide-y" style={{ borderTop: LINE, borderBottom: LINE, borderColor: "rgba(232,212,168,0.16)" }}>
             {faqs.map((f) => (
-              <details key={f.q} className="card-glass p-5">
-                <summary className="cursor-pointer font-semibold" style={SERIF}>
+              <details key={f.q} className="group py-5" style={{ borderColor: "rgba(232,212,168,0.16)" }}>
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg [&::-webkit-details-marker]:hidden" style={SERIF}>
                   {f.q}
+                  <span className="transition-transform duration-300 group-open:rotate-45" style={{ color: CHAMPAGNE }}>
+                    ＋
+                  </span>
                 </summary>
-                <p className="mt-3 text-sm leading-relaxed text-[#A1A1AA]">{f.a}</p>
+                <p className="mt-3 leading-loose text-[#B9ADB6]">{f.a}</p>
               </details>
             ))}
           </div>
-          <p className="mt-6 text-center text-xs leading-relaxed text-[#6B6B76]">
+          <p className="mt-6 text-center text-xs leading-relaxed text-[#6F6470]">
             ＊所有占卜及玄學分析只供參考，每人情況不同，結果因人而異，並不保證任何特定結果。
           </p>
         </div>
       </section>
 
       {/* Further reading */}
-      <section className="px-6 pb-16 sm:px-8 lg:px-16">
+      <section className="px-6 pb-20 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-3xl">
-          <h2 className="mb-5 text-xl font-semibold text-[#E8D48B]" style={SERIF}>
+          <h2 className="mb-5 text-center text-xl font-semibold" style={{ ...SERIF, color: CHAMPAGNE }}>
             延伸閱讀
           </h2>
           <ul className="grid gap-3 sm:grid-cols-2">
             {reading.map((r) => (
               <li key={r.slug}>
-                <a href={`/blog/${r.slug}`} className="text-sm text-[#C4C4CE] underline-offset-4 hover:text-[#E8D48B] hover:underline">
+                <a
+                  href={`/blog/${r.slug}`}
+                  className="block rounded-2xl px-5 py-4 text-sm leading-relaxed text-[#CFC4CC] transition-colors hover:bg-white/5"
+                  style={{ border: LINE }}
+                >
                   {r.title}
                 </a>
               </li>
@@ -267,15 +383,19 @@ export default function LovePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="px-6 pb-24 sm:px-8 lg:px-16">
-        <div className="card-glass-gold mx-auto max-w-3xl p-8 text-center">
-          <h2 className="text-2xl font-bold sm:text-3xl" style={SERIF}>
+      <section className="px-6 pb-28 sm:px-8 lg:px-16">
+        <div
+          className="relative mx-auto max-w-4xl overflow-hidden rounded-[32px] px-8 py-14 text-center"
+          style={{ border: LINE, background: "linear-gradient(135deg, rgba(233,184,196,0.12), rgba(201,168,76,0.08))" }}
+        >
+          <Eyebrow>Book a reading</Eyebrow>
+          <h2 className="text-3xl font-semibold sm:text-4xl" style={SERIF}>
             想問感情嘅事？
           </h2>
-          <p className="mb-6 mt-3 text-sm text-[#A1A1AA]">講低你想問嘅問題，WhatsApp 或 Telegram 預約時間。</p>
-          <div className="flex justify-center">
-            <ContactButtons />
-          </div>
+          <p className="mx-auto mb-8 mt-4 max-w-md text-sm leading-relaxed text-[#CFC4CC]">
+            講低你想問嘅問題，WhatsApp 或 Telegram 預約時間，網上或面對面都得。
+          </p>
+          <ContactButtons center />
         </div>
       </section>
 
