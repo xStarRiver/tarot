@@ -5,6 +5,7 @@
 // source code lets the owner count real enquiries per channel:
 //   (ref: G)  arrived from a Google Ads click (gclid / gbraid / wbraid)
 //   (ref: GS) a Google Ads click from the Search campaign (final URL suffix src=gs)
+//   (ref: GL) a Google Ads click that landed on the /love page (感情・塔羅 asset group)
 //   (ref: M)  arrived from a Meta / Instagram ad (fbclid, utm_source=ig|fb)
 //   (ref: W)  any other website visitor
 // The source is kept in sessionStorage so it survives navigation to /blog.
@@ -13,7 +14,10 @@ const SOURCE_KEY = "tarot_lead_src";
 
 function landingSource(): string | null {
   const params = new URLSearchParams(window.location.search);
-  if (params.has("gclid") || params.has("gbraid") || params.has("wbraid")) return params.get("src") === "gs" ? "GS" : "G";
+  if (params.has("gclid") || params.has("gbraid") || params.has("wbraid")) {
+    if (params.get("src") === "gs") return "GS";
+    return window.location.pathname.startsWith("/love") ? "GL" : "G";
+  }
   const utmSource = (params.get("utm_source") ?? "").toLowerCase();
   if (params.has("fbclid") || ["ig", "fb", "facebook", "instagram"].includes(utmSource)) return "M";
   return null;
